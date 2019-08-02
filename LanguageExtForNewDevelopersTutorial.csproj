@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Tutorial02\**" />
+    <Compile Remove="Tutorial03\**" />
+    <Compile Remove="Tutorial04\**" />
+    <Compile Remove="Tutorial05\**" />
+    <Compile Remove="Tutorial0\**" />
+    <EmbeddedResource Remove="Tutorial02\**" />
+    <EmbeddedResource Remove="Tutorial03\**" />
+    <EmbeddedResource Remove="Tutorial04\**" />
+    <EmbeddedResource Remove="Tutorial05\**" />
+    <EmbeddedResource Remove="Tutorial0\**" />
+    <None Remove="Tutorial02\**" />
+    <None Remove="Tutorial03\**" />
+    <None Remove="Tutorial04\**" />
+    <None Remove="Tutorial05\**" />
+    <None Remove="Tutorial0\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="LanguageExt.Core" Version="3.3.4" />
+  </ItemGroup>
+
+</Project>
