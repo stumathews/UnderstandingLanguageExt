@@ -16,7 +16,7 @@ namespace Tutorial05
             // Do something with or to the Box
 
             var doubled1 = boxOfIntegers
-                            .Bind(DoubleNumbers); 
+                            .Bind(extract => new Box<int[]>(extract.Select(x => x * 2).ToArray())); 
 
             var doubled2 = boxOfIntegers
                             .Map(numbers => numbers.Select(x => x * 2).ToArray());
@@ -29,10 +29,22 @@ namespace Tutorial05
             var doubled4 = from extract in boxOfIntegers
                 select DoubleNumbers(extract).Extract; // Use Select via linq expression syntax
 
+
+            Box<int[]> doubleDouble1 = boxOfIntegers
+                .Bind(numbers => DoubleNumbers(numbers))
+                .Map(DoubleNumbers)
+                .Bind(box => box.Bind( numbers => DoubleNumbers(numbers) ));
+
+            var doubleDouble2 = from numbers in boxOfIntegers
+                from redoubled in DoubleNumbers(numbers)
+                select redoubled;
+                
+            
             // Give me a box of Double Double of my Box
-            var doubleDouble = from firstDouble in DoubleMyBox(boxOfIntegers)
-                                from reDouble in DoubleNumbers(firstDouble) //VET: bind
+            var doubleDouble3 = from firstDouble in DoubleMyBox(boxOfIntegers)
+                                from reDouble in DoubleNumbers(firstDouble) //VET: bind part of SelectMany()
                                     select reDouble; // project(reDouble, firstDouble)
+
 
         }
 
