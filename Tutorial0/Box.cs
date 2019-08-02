@@ -6,7 +6,7 @@ using System.Runtime.InteropServices.ComTypes;
 namespace Tutorial01
 {
     /// <summary>
-    /// A box can hold 1 thing only
+    /// A box can hold a thing only
     /// </summary>
     /// <typeparam name="T"></typeparam>
     public class Box<T>
