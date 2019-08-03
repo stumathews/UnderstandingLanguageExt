@@ -22,8 +22,7 @@ namespace Tutorial05
                             .Map(numbers => numbers.Select(x => x * 2).ToArray());
             
             var doubled3 = from extract in boxOfIntegers
-                let transformedAndLifted = DoubleNumbers(extract) // bind() part of SelectMany() ie transform extracted value
-                from transformed in transformedAndLifted //SelectMany
+                from transformed in DoubleNumbers(extract) // bind() part of SelectMany() ie transform extracted value 
                 select transformed; // project(extract, transformedAndLiftedResult) part of SelectMany
             
             var doubled4 = from extract in boxOfIntegers
