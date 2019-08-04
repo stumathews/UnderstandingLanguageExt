@@ -19,4 +19,8 @@ The tutorials go through the followng concepts
 * Tutorial09 - Shows you that pipelines include automatic validation
 * Tutorial10 - Expands on Tutorial09 to show that transofmration function always return a Monad
 * Tutorial11 - Shows how monad built in validation, affords short-cuircuiting functionality.
+* Tutorial12 - Pure Functions (Todo)
+* Tutorial13 - Partial Functions (Todo)
+* Tutorial14 - Composition of functions (Todo)
+* Tutorial15 - language Ext (Todo)
 
