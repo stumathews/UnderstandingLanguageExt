@@ -7,7 +7,7 @@ It covers the Linq Fluent and Linq Expression syntaxes when using Select(), Sele
 The tutorials go through the followng concepts
 
 * Tutorial01 - Construction of a Type with its own Select() function
-* Tutorial02 - Construction of a Mondad Type with its own Select(), SelectMany(), Map() and Bind() functions. Shows you how to use Map and Bind.
+* Tutorial02 - Shows you how to use Map and Bind (also construction of a Mondad Type)
 * Tutorial03 - Shows how Bind is used to create a pipeline of function calls
 * Tutorial04 - Performing operations on a Box using Map() and Bind(), Select and SelectMany()
 * Tutorial05 - More examples of performing operations on a Box
