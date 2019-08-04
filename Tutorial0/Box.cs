@@ -49,6 +49,7 @@ namespace Tutorial01
             
             // Extract
             TB transformedItem = map(box.Item);
+
             
             // Map
             return new Box<TB>(transformedItem);

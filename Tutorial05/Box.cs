@@ -54,6 +54,9 @@ namespace Tutorial05
 
             // Transform
             TB transformedItem = map(extracted);
+
+            if(liftedResult.IsEmpty)
+                return new Box<TC>();
             
             // Lift
             return new Box<TB>(transformedItem);

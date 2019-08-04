@@ -73,6 +73,9 @@ namespace Tutorial01
 
             // Transform and LiftTo
             Box<TB> liftedResult = bind(extract);
+
+            if(liftedResult.IsEmpty)
+                return new Box<TC>();
             
             // Project/Combine
             TC t2 = project(extract, liftedResult.Item);

@@ -27,7 +27,7 @@ namespace Tutorial09
             var result = DoSoething(portfoliosWithHoldings);
             
 
-            /* Pipline way of thinking */
+            /* Pipline way of thinking ie the declarative way*/
 
             // Linq Fluent syntax way ie not using SelectMany()
             Box<Portfolio[]> pipelineResult1 = GetPortfoliosByIds1(portfolioIds) // note same input, portfolioIds can be used but this is returning a box now
