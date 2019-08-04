@@ -17,9 +17,10 @@ namespace Tutorial11
             // Further more we cannot process any boxes if even one box is empty:
 
             var result = from number1 in aBoxOfNumbers1
-                    from number2 in aBoxOfNumbers2
-                    from number3 in aBoxOfNumbers3
+                    from number2 in aBoxOfNumbers2 // this result causes the next Bind() to check see that its an invalid input and itself returns empty box and this repeats until the result is deemped empty
+                    from number3 in aBoxOfNumbers3 // this does run, but it just bails out at the Validation phase in the bind()'s VETL stage
                     select number3;
+
             Console.WriteLine($"The result is: {result}");
                         
         }
