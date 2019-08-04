@@ -14,9 +14,12 @@ The tutorials go through the followng concepts
 * Tutorial09 - Shows you that pipelines include automatic validation
 * Tutorial10 - Expands on Tutorial09 to show that transofmration function always return a Monad
 * Tutorial11 - Shows how monad built in validation, affords short-cuircuiting functionality.
-* Tutorial12 - Pure Functions
-* Tutorial13 - Partial Functions
+* Tutorial12 - Pure Functions - immutable functions with now ide effects
+* Tutorial13 - Partial Functions - Allowing multiple arguments to be 'baked' in and still appear as Math like functions
 * Tutorial14 - Composition of functions
-* Tutorial15 - language Ext
-* Tutorial16 - Immutability
+* Tutorial15 - language Ext - Either<L,R> and Option<T>
+* Tutorial16 - Immutability - Smart constructors
+* Tutorial17 - Caching
+* Tutorial18 - Threading and parallelism benfits
+* Tutorial19 - Guidelines for writing immutable code, starting with IO on the fringes (bycicle spoke design)
 
