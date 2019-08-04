@@ -1,4 +1,4 @@
-# LanguageExtForNewDevelopers
+# Language.Ext for new developers
 
 An initial tutorial showing how to use languageExt.
 This walks through the fundamentals behind Select() SelectMany() and Bind() and Map()
