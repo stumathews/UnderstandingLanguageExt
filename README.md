@@ -17,7 +17,7 @@ The tutorials go through the followng concepts
 * Tutorial11 - Shows how monad built in validation, affords short-cuircuiting functionality.
 * Tutorial12 - Composition of functions
 * Tutorial13 - Pure Functions - immutable functions with now side effects ie mathematically correct
-# Either<L,R>
+# Language.Ext
 ## Either Basics
 * Tutorial14 - Shows the basics of Either<L,R> using Bind()
 * Tutorial15 - Shows the basics of Either<L,R>, using BiBind()
