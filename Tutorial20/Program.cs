@@ -6,8 +6,8 @@ using LanguageExt.DataTypes.Serialisation;
 
 namespace Tutorial20
 {
-    // This tutorial shows you what a what an Either<> type is and how to use 
-    
+    // Shows the basics of Either<L,R>, using BindLeft() to make provision for a transform function forthe left types of the either. The transform is NOT automatically lifted(this is a bind() after all).
+
     class Program
     {
         static void Main(string[] args)

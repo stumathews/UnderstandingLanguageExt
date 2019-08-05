@@ -6,8 +6,8 @@ using LanguageExt.DataTypes.Serialisation;
 
 namespace Tutorial20
 {
-    // This tutorial shows you what a what an Either<> type is and how to use a Match() to obtain the value of the underlying value in the either
-    
+    // Using Match to extract the contents of an Either<> but and not put it back into and either types (as map() and Bind() would do)
+
     class Program
     {
         static void Main(string[] args)

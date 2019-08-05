@@ -8,8 +8,8 @@ using LanguageExt.DataTypes.Serialisation;
 
 namespace Tutorial27
 {
-    
-    
+    //Shows the basics of transforming a list of Eithers using match to understand whats in them (both left and right values) and then transform them based on their values into a single type that represents either in one way (a string)
+
     class Program
     {
         static void Main(string[] args)

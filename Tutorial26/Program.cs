@@ -8,7 +8,7 @@ using LanguageExt.DataTypes.Serialisation;
 
 namespace Tutorial26
 {
-    
+    // Using Partition to easily get both the lefts() and the Rights() in one call - as a tuple of (lefts,rights)   
     class Program
     {
         static void Main(string[] args)

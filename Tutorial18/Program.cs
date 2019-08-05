@@ -6,8 +6,8 @@ using LanguageExt.DataTypes.Serialisation;
 
 namespace Tutorial18
 {
-    // This tutorial shows you what a what an Either<> type is and how to use 
-    
+    //  Iter: run an arbitary function on the either if its value is right type or BiIter() to specify a function to run on both types 
+
     class Program
     {
         static void Main(string[] args)

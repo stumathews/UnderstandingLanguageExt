@@ -8,8 +8,8 @@ using LanguageExt.DataTypes.Serialisation;
 
 namespace Tutorial25
 {
-    // This tutorial shows you how you can transform a List of Eithers, effectively doing a Map on each either in the list, and this Bi variety allows you to specify how make provision to map/transform both types
-    
+    //  Using Apply both on a simple Either<> and a List of Eithers to demonstate its simplicity
+
     class Program
     {
         static void Main(string[] args)

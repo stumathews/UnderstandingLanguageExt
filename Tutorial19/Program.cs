@@ -6,8 +6,8 @@ using LanguageExt.DataTypes.Serialisation;
 
 namespace Tutorial19
 {
-    // This tutorial shows you what a what an Either<> type is and how to use 
-    
+    // Using BiMap() to make provision for a transform function for both the left and right types of the either. The transform is automatically lifted.
+
     class Program
     {
         static void Main(string[] args)
