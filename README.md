@@ -44,4 +44,5 @@ The tutorials go through the followng concepts
 * TutorialG - Spoke and wheel model
 * TutorialH - Map, HashSt, Set LanguageExt collections
 * TutorialI - Changing state over time (Fold)
+* TutorialJ - Custom useful Monad Extensions
 
