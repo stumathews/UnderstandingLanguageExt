@@ -3,6 +3,7 @@
 An initial tutorial showing how to use ideas such as pipelineing, delcarative style coding and walks through the fundamentals behind Select() SelectMany() and Bind() and Map() while covering implementation via Linq's Fluent and Linq Expression syntax.
 The tutorials go through the followng concepts
 
+# The Basics
 * Tutorial01 - Construction of a Type with its own Select() function
 * Tutorial02 - Shows you how to use Map and Bind (also construction of a Mondad Type)
 * Tutorial03 - Shows how Bind is used to create a pipeline of function calls
@@ -16,6 +17,7 @@ The tutorials go through the followng concepts
 * Tutorial11 - Shows how monad built in validation, affords short-cuircuiting functionality.
 * Tutorial12 - Composition of functions
 * Tutorial13 - Pure Functions - immutable functions with now side effects ie mathematically correct
+# Either<L,R>
 * Tutorial14 - Shows the basics of Either<L,R> using Bind()
 * Tutorial15 - Shows the basics of Either<L,R>, using BiBind()
 * Tutorial16 - Shows the basics of Either<L,R>, using BiExists()
@@ -24,12 +26,14 @@ The tutorials go through the followng concepts
 * Tutorial19 - Shows the basics of Either<L,R>, using BiMap() to make provision for a transform function for both the left and right types of the either. The transform is automatically lifted.
 * Tutorial20 - Shows the basics of Either<L,R>, using BindLeft() to make provision for a transform function forthe left types of the either. The transform is NOT automatically lifted(this is a bind() after all).
 * Tutorial21 - Shows the basics of Either<L,R>, using BindLeft() using Match to extract the contents of an Either<> but and not put it back into and either types (as map() and Bind() would do)
+# Operations on Lists of Eithers
 * Tutorial22 - Shows the basics of transforming a list of Eithers using BiMapT and MapT
 * Tutorial23 - Shows the basics of transforming a list of Eithers using BindT
 * Tutorial24 - Shows the basics of transforming a list of Eithers using IterT
 * Tutorial25 - Shows the basics of transforming a list of Eithers using Apply both on a simple Either<> and a List of Eithers to demonstate its simplicity
 * Tutorial26 - Shows the basics of transforming a list of Eithers using Partition to easily get both the lefts() and the Rights() in one call - as a tuple of (lefts,rights)
 * Tutorial27 - Shows the basics of transforming a list of Eithers using match to understand whats in them (both left and right values) and then transform them based on their values into a single type that represents either in one way (a string)
+# Work in progress
 * Tutorialv - Partial Functions - Allowing multiple arguments to be 'baked' in and still appear as Math like functions
 * Tutorialw - Immutability - Smart constructors, Immutable data-types
 * Tutorialx - Caching
