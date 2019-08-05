@@ -4,7 +4,7 @@ using System.Linq;
 using LanguageExt;
 using LanguageExt.DataTypes.Serialisation;
 
-namespace Tutorial23
+namespace Tutorial24
 {
     // This tutorial shows you how you can transform a List of Eithers, effectively doing a Map on each either in the list, and this Bi variety allows you to specify how make provision to map/transform both types
     
@@ -20,23 +20,9 @@ namespace Tutorial23
 
             IEnumerable<Either<int, string>> listOfEithers = new Either<int, string>[] { intOrString1, intOrString2, intOrString3, intOrString4, intOrString5 };
 
-            // transform the right values (if they are there) for each either in the list
-            // As this is a bind, you need to lisft the result in to a Either
-            listOfEithers.BindT(rightString => TransformRight(rightString));
-
-            Either<int, string> TransformRight(string rightString)
-            {
-                Either<int, string> t = $"My name is '{rightString}'";
-                return t;
-            }
-
-            var newRights = listOfEithers.Rights(); /* note we dont care care about the lefts, 
-            if we did we migth you match to see what both left and right values would be if they are set on the eithers we are looking at - see Tutorial 22 */
-            foreach (var str in newRights)
-            {
-                Console.WriteLine(str);
-            }
-
+            // Extract right values from the eithers in the list and run this function to get them.
+            // note if there is no right value for the either being inspected, this function is not run
+            listOfEithers.IterT(rightString => Console.WriteLine($"{rightString}"));
         }
         
     }      
