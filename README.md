@@ -23,6 +23,9 @@ The tutorials go through the followng concepts
 * Tutorial18 - Shows the basics of Either<L,R>, using iter() to run an arbitary function on the either if its value is right type or BiIter() to specify a function to run on both types 
 * Tutorial19 - Shows the basics of Either<L,R>, using BiMap() to make provision for a transform function for both the left and right types of the either. The transform is automatically lifted.
 * Tutorial20 - Shows the basics of Either<L,R>, using BindLeft() to make provision for a transform function forthe left types of the either. The transform is NOT automatically lifted(this is a bind() after all).
+* Tutorial21 - Shows the basics of Either<L,R>, using BindLeft() using Match to extract the contents of an Either<> but and not put it back into and either types (as map() and Bind() would do)
+* Tutorial22 - Shows the basics of transforming a list of Eithers using BiMapT and MapT
+* Tutorial23 - Shows the basics of transforming a list of Eithers using BindT
 * Tutorialv - Partial Functions - Allowing multiple arguments to be 'baked' in and still appear as Math like functions
 * Tutorialw - Immutability - Smart constructors, Immutable data-types
 * Tutorialx - Caching
