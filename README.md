@@ -14,12 +14,18 @@ The tutorials go through the followng concepts
 * Tutorial09 - Shows you that pipelines include automatic validation
 * Tutorial10 - Expands on Tutorial09 to show that transofmration function always return a Monad
 * Tutorial11 - Shows how monad built in validation, affords short-cuircuiting functionality.
-* Tutorial12 - Pure Functions - immutable functions with now ide effects
-* Tutorial13 - Partial Functions - Allowing multiple arguments to be 'baked' in and still appear as Math like functions
-* Tutorial14 - Composition of functions
-* Tutorial15 - language Ext - Either<L,R> and Option<T>
-* Tutorial16 - Immutability - Smart constructors
-* Tutorial17 - Caching
-* Tutorial18 - Threading and parallelism benfits
-* Tutorial19 - Guidelines for writing immutable code, starting with IO on the fringes (bycicle spoke design)
+* Tutorial12 - Composition of functions
+* Tutorial13 - Pure Functions - immutable functions with now side effects ie mathematically correct
+* Tutorial14 - Shows the basics of Either<L,R> using Bind()
+* Tutorial15 - Shows the basics of Either<L,R>, using BiBind()
+* Tutorial16 - Shows the basics of Either<L,R>, using BiExists()
+* Tutorial17 - Shows the basics of Either<L,R>, using Fold() to change an initial state over time based on the contents of the Either
+* Tutorial18 - Shows the basics of Either<L,R>, using iter() to run an arbitary function on the either if its value is right type or BiIter() to specify a function to run on both types 
+* Tutorial19 - Shows the basics of Either<L,R>, using BiMap() to make provision for a transform function for both the left and right types of the either. The transform is automatically lifted.
+* Tutorial20 - Shows the basics of Either<L,R>, using BindLeft() to make provision for a transform function forthe left types of the either. The transform is NOT automatically lifted(this is a bind() after all).
+* Tutorialv - Partial Functions - Allowing multiple arguments to be 'baked' in and still appear as Math like functions
+* Tutorialw - Immutability - Smart constructors, Immutable data-types
+* Tutorialx - Caching
+* Tutorialy - Threading and parallelism benfits
+* Tutorialz - Guidelines for writing immutable code, starting with IO on the fringes (bycicle spoke design)
 

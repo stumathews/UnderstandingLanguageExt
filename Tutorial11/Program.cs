@@ -22,7 +22,7 @@ namespace Tutorial11
                     select number3;
 
             Console.WriteLine($"The result is: {result}");
-                        
+
         }
     }      
 }
