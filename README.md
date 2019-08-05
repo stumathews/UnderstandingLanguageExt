@@ -35,9 +35,13 @@ The tutorials go through the followng concepts
 * Tutorial26 - Shows the basics of transforming a list of Eithers using Partition to easily get both the lefts() and the Rights() in one call - as a tuple of (lefts,rights)
 * Tutorial27 - Shows the basics of transforming a list of Eithers using match to understand whats in them (both left and right values) and then transform them based on their values into a single type that represents either in one way (a string)
 # Work in progress
-* Tutorialv - Partial Functions - Allowing multiple arguments to be 'baked' in and still appear as Math like functions
-* Tutorialw - Immutability - Smart constructors, Immutable data-types
-* Tutorialx - Caching
-* Tutorialy - Threading and parallelism benfits
-* Tutorialz - Guidelines for writing immutable code, starting with IO on the fringes (bycicle spoke design)
+* TutorialA - Partial Functions - Allowing multiple arguments to be 'baked' in and still appear as Math like functions (pure functions)
+* TutorialB - Immutability - Smart constructors, Immutable data-types
+* TutorialC - Caching
+* TutorialD - Threading and parallelism benfits
+* TutorialE - Guidelines for writing immutable code, starting with IO on the fringes (bycicle spoke design)
+* TutorialF - Immutable Collection types in Language Ext
+* TutorialG - Spoke and wheel model
+* TutorialH - Map, HashSt, Set LanguageExt collections
+* TutorialI - Changing state over time (Fold)
 
