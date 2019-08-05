@@ -18,6 +18,7 @@ The tutorials go through the followng concepts
 * Tutorial12 - Composition of functions
 * Tutorial13 - Pure Functions - immutable functions with now side effects ie mathematically correct
 # Either<L,R>
+# Either Basics
 * Tutorial14 - Shows the basics of Either<L,R> using Bind()
 * Tutorial15 - Shows the basics of Either<L,R>, using BiBind()
 * Tutorial16 - Shows the basics of Either<L,R>, using BiExists()
@@ -26,7 +27,7 @@ The tutorials go through the followng concepts
 * Tutorial19 - Shows the basics of Either<L,R>, using BiMap() to make provision for a transform function for both the left and right types of the either. The transform is automatically lifted.
 * Tutorial20 - Shows the basics of Either<L,R>, using BindLeft() to make provision for a transform function forthe left types of the either. The transform is NOT automatically lifted(this is a bind() after all).
 * Tutorial21 - Shows the basics of Either<L,R>, using BindLeft() using Match to extract the contents of an Either<> but and not put it back into and either types (as map() and Bind() would do)
-# Operations on Lists of Eithers
+## Operations on Lists of Eithers
 * Tutorial22 - Shows the basics of transforming a list of Eithers using BiMapT and MapT
 * Tutorial23 - Shows the basics of transforming a list of Eithers using BindT
 * Tutorial24 - Shows the basics of transforming a list of Eithers using IterT
