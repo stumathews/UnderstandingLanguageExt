@@ -3,6 +3,7 @@
 An initial tutorial showing how to use ideas such as pipelineing, delcarative style coding and walks through the fundamentals behind Select() SelectMany() and Bind() and Map() while covering implementation via Linq's Fluent and Linq Expression syntax.
 The tutorials go through the followng concepts
 
+# The Basics
 * Tutorial01 - Construction of a Type with its own Select() function
 * Tutorial02 - Shows you how to use Map and Bind (also construction of a Mondad Type)
 * Tutorial03 - Shows how Bind is used to create a pipeline of function calls
@@ -16,23 +17,32 @@ The tutorials go through the followng concepts
 * Tutorial11 - Shows how monad built in validation, affords short-cuircuiting functionality.
 * Tutorial12 - Composition of functions
 * Tutorial13 - Pure Functions - immutable functions with now side effects ie mathematically correct
+# Language.Ext
+## Either<Left,Right> Basics
 * Tutorial14 - Shows the basics of Either<L,R> using Bind()
-* Tutorial15 - Shows the basics of Either<L,R>, using BiBind()
-* Tutorial16 - Shows the basics of Either<L,R>, using BiExists()
-* Tutorial17 - Shows the basics of Either<L,R>, using Fold() to change an initial state over time based on the contents of the Either
-* Tutorial18 - Shows the basics of Either<L,R>, using iter() to run an arbitary function on the either if its value is right type or BiIter() to specify a function to run on both types 
-* Tutorial19 - Shows the basics of Either<L,R>, using BiMap() to make provision for a transform function for both the left and right types of the either. The transform is automatically lifted.
-* Tutorial20 - Shows the basics of Either<L,R>, using BindLeft() to make provision for a transform function forthe left types of the either. The transform is NOT automatically lifted(this is a bind() after all).
-* Tutorial21 - Shows the basics of Either<L,R>, using BindLeft() using Match to extract the contents of an Either<> but and not put it back into and either types (as map() and Bind() would do)
-* Tutorial22 - Shows the basics of transforming a list of Eithers using BiMapT and MapT
-* Tutorial23 - Shows the basics of transforming a list of Eithers using BindT
-* Tutorial24 - Shows the basics of transforming a list of Eithers using IterT
-* Tutorial25 - Shows the basics of transforming a list of Eithers using Apply both on a simple Either<> and a List of Eithers to demonstate its simplicity
-* Tutorial26 - Shows the basics of transforming a list of Eithers using Partition to easily get both the lefts() and the Rights() in one call - as a tuple of (lefts,rights)
-* Tutorial27 - Shows the basics of transforming a list of Eithers using match to understand whats in them (both left and right values) and then transform them based on their values into a single type that represents either in one way (a string)
-* Tutorialv - Partial Functions - Allowing multiple arguments to be 'baked' in and still appear as Math like functions
-* Tutorialw - Immutability - Smart constructors, Immutable data-types
-* Tutorialx - Caching
-* Tutorialy - Threading and parallelism benfits
-* Tutorialz - Guidelines for writing immutable code, starting with IO on the fringes (bycicle spoke design)
+* Tutorial15 - Using BiBind()
+* Tutorial16 - Using BiExists()
+* Tutorial17 - Using Fold() to change an initial state over time based on the contents of the Either
+* Tutorial18 - Using Iter()
+* Tutorial19 - Using BiMap()
+* Tutorial20 - Using BindLeft()
+* Tutorial21 - Using Match()
+## Operations on Lists of Either<left, Right>
+* Tutorial22 - Using BiMapT and MapT
+* Tutorial23 - Using BindT
+* Tutorial24 - Using IterT
+* Tutorial25 - Using Apply
+* Tutorial26 - Using Partition
+* Tutorial27 - using Match
+# Work in progress
+* TutorialA - Partial Functions - Allowing multiple arguments to be 'baked' in and still appear as Math like functions (pure functions)
+* TutorialB - Immutability - Smart constructors, Immutable data-types
+* TutorialC - Caching
+* TutorialD - Threading and parallelism benfits
+* TutorialE - Guidelines for writing immutable code, starting with IO on the fringes (bycicle spoke design)
+* TutorialF - Immutable Collection types in Language Ext
+* TutorialG - Spoke and wheel model
+* TutorialH - Map, HashSt, Set LanguageExt collections
+* TutorialI - Changing state over time (Fold)
+* TutorialJ - Custom useful Monad Extensions
 
