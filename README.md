@@ -18,7 +18,7 @@ The tutorials go through the followng concepts
 * Tutorial12 - Composition of functions
 * Tutorial13 - Pure Functions - immutable functions with now side effects ie mathematically correct
 # Either<L,R>
-# Either Basics
+## Either Basics
 * Tutorial14 - Shows the basics of Either<L,R> using Bind()
 * Tutorial15 - Shows the basics of Either<L,R>, using BiBind()
 * Tutorial16 - Shows the basics of Either<L,R>, using BiExists()
