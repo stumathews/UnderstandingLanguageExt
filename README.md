@@ -26,6 +26,10 @@ The tutorials go through the followng concepts
 * Tutorial21 - Shows the basics of Either<L,R>, using BindLeft() using Match to extract the contents of an Either<> but and not put it back into and either types (as map() and Bind() would do)
 * Tutorial22 - Shows the basics of transforming a list of Eithers using BiMapT and MapT
 * Tutorial23 - Shows the basics of transforming a list of Eithers using BindT
+* Tutorial24 - Shows the basics of transforming a list of Eithers using IterT
+* Tutorial25 - Shows the basics of transforming a list of Eithers using Apply both on a simple Either<> and a List of Eithers to demonstate its simplicity
+* Tutorial26 - Shows the basics of transforming a list of Eithers using Partition to easily get both the lefts() and the Rights() in one call - as a tuple of (lefts,rights)
+* Tutorial27 - Shows the basics of transforming a list of Eithers using match to understand whats in them (both left and right values) and then transform them based on their values into a single type that represents either in one way (a string)
 * Tutorialv - Partial Functions - Allowing multiple arguments to be 'baked' in and still appear as Math like functions
 * Tutorialw - Immutability - Smart constructors, Immutable data-types
 * Tutorialx - Caching
