@@ -46,3 +46,6 @@ The tutorials go through the followng concepts
 * TutorialI - Changing state over time (Fold)
 * TutorialJ - Custom useful Monad Extensions
 
+References:
+
+https://stackoverflow.com/questions/28139259/why-do-we-need-monads Why do we need monads? 
