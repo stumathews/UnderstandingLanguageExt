@@ -4,7 +4,7 @@ An initial tutorial showing how to use ideas such as pipelineing, delcarative st
 The tutorials go through the followng concepts
 
 # The Basics
-* Tutorial01 - Construction of a Type with its own Select() function
+* Tutorial01 - Construction of a Monad
 * Tutorial02 - Shows you how to use Map and Bind (also construction of a Mondad Type)
 * Tutorial03 - Shows how Bind is used to create a pipeline of function calls
 * Tutorial04 - Performing operations on a Box using Map() and Bind(), Select and SelectMany()
@@ -33,7 +33,13 @@ The tutorials go through the followng concepts
 * Tutorial24 - Using IterT
 * Tutorial25 - Using Apply
 * Tutorial26 - Using Partition
-* Tutorial27 - using Match
+* Tutorial27 - Using Match
+## Option<T>
+* Tutorial28 - Introduction to Option<T>
+* Tutorial29 - Basic use-case of Option<T>
+* Tutorial30 - Using Option<T> in functions (passing in and returning)
+* Tutorial31 - using IfSome() and IfNone()
+* Tutorial32 - Creates an entire application of just functions returning and receiving Option<T>
 # Work in progress
 * TutorialA - Partial Functions - Allowing multiple arguments to be 'baked' in and still appear as Math like functions (pure functions)
 * TutorialB - Immutability - Smart constructors, Immutable data-types
