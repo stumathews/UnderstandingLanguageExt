@@ -44,6 +44,7 @@ The tutorials go through the followng concepts
 * Tutorial34 - Using BiMap() - see tutorial 19
 # Lusid Specific 
 * Tutorial35 - Using custom extension method ThrowIfFailed() and introducing Either<IAmFailure, Option<T>> as a standard return type for all functions
+* Tutorial36 - Using custom extension method FailureToNone()
 # Work in progress
 * TutorialA - Partial Functions - Allowing multiple arguments to be 'baked' in and still appear as Math like functions (pure functions)
 * TutorialB - Immutability - Smart constructors, Immutable data-types
@@ -55,6 +56,7 @@ The tutorials go through the followng concepts
 * TutorialH - Map, HashSt, Set LanguageExt collections
 * TutorialI - Changing state over time (Fold)
 * TutorialJ - Custom useful Monad Extensions
+
 
 References:
 
