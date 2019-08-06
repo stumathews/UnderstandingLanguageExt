@@ -4,7 +4,7 @@ An initial tutorial showing how to use ideas such as pipelineing, delcarative st
 The tutorials go through the followng concepts
 
 # The Basics
-* Tutorial01 - Construction of a Monad
+* Tutorial01 - Introduction to the Box type (a Monad)
 * Tutorial02 - Shows you how to use Map and Bind (also construction of a Mondad Type)
 * Tutorial03 - Shows how Bind is used to create a pipeline of function calls
 * Tutorial04 - Performing operations on a Box using Map() and Bind(), Select and SelectMany()
