@@ -1,4 +1,4 @@
-# Language.Ext for new developers
+# Understanding Language.Ext for new developers
 
 An initial tutorial showing how to use ideas such as pipelineing, delcarative style coding and walks through the fundamentals behind Select() SelectMany() and Bind() and Map() while covering implementation via Linq's Fluent and Linq Expression syntax.
 The tutorials go through the followng concepts
