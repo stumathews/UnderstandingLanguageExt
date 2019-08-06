@@ -42,7 +42,7 @@ The tutorials go through the followng concepts
 * Tutorial32 - Creates an entire application of just functions via pipelineing which returning and receive Option<T>
 * Tutorial33 - Using ToEither<>
 * Tutorial34 - Using BiMap() - see tutorial 19
-# Lusid Specific 
+# Custom Specific 
 * Tutorial35 - Using custom extension method ThrowIfFailed() and introducing Either<IAmFailure, Option<T>> as a standard return type for all functions
 * Tutorial36 - Using custom extension method FailureToNone()
 # Work in progress
