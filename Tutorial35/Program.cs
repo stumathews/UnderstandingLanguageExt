@@ -8,7 +8,7 @@ using LanguageExt;
 using LanguageExt.DataTypes.Serialisation;
 using Tutorial35;
 
-namespace Tutorial33
+namespace Tutorial35
 {
     // ThrowIfFailed and the standard wrapped return type Option<T> - wrapped in an Either of that or a failure.
     // T can be any type your function deals with, as you'd use in any normal function you create, only you make it an Option. You also bundle with your return type a failure if there is one, by 

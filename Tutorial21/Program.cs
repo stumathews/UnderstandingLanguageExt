@@ -18,7 +18,7 @@ namespace Tutorial20
             // Functions for both types of content are specified, into those function will go the actual content of the either.
             // The return result of each function must be the same type (both string or both int)
             // Only one function will run, as only one of the two types can be in the either at any one moment in time.
-            var result = intOrString.Match(rightString => $"Right value is {rightString}", leftInteger => $"left value is {leftInteger}");
+            string result = intOrString.Match(rightString => $"Right value is {rightString}", leftInteger => $"left value is {leftInteger}");
 
             Console.WriteLine($"Result is {result}");
 
