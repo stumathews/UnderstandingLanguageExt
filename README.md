@@ -40,6 +40,8 @@ The tutorials go through the followng concepts
 * Tutorial30 - Using Option<T> in functions (passing in and returning)
 * Tutorial31 - using IfSome() and IfNone()
 * Tutorial32 - Creates an entire application of just functions via pipelineing which returning and receive Option<T>
+* Tutorial33 - Using ToEither<>
+* Tutorial33 - Using BiMap() - see tutorial 19
 # Work in progress
 * TutorialA - Partial Functions - Allowing multiple arguments to be 'baked' in and still appear as Math like functions (pure functions)
 * TutorialB - Immutability - Smart constructors, Immutable data-types
