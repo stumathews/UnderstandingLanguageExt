@@ -34,7 +34,7 @@ The tutorials go through the followng concepts
 * Tutorial25 - Using Apply
 * Tutorial26 - Using Partition
 * Tutorial27 - Using Match
-## Option<T>
+## Option <T> Basics
 * Tutorial28 - Introduction to Option<T>
 * Tutorial29 - Basic use-case of Option<T>
 * Tutorial30 - Using Option<T> in functions (passing in and returning)
