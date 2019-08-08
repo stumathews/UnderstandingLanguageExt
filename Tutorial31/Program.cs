@@ -23,27 +23,20 @@ namespace Tutorial31
             var result = PerformPensionCalculations(result2);
 
             Unit noValue = result.IfSome(validInput => Console.WriteLine("yay valid input is {validInput}"));
-            var defaultPensionIfInvalidInput = result.IfNone(() => -1);
+            int defaultPensionIfInvalidInput = result.IfNone(() => -1); // IfNone turns your result into a valid value, effectively a Some() but its actual value, int
         }
 
         static Option<int> PerformPensionCalculations(Option<int> input)
         {
             // Extract, Validate and transform it using Map
             return input.Map(validInput => CalculateYourPension(validInput));
-            // we can call a normal function (non monad returning or accepting) inside a Map or Bind
+            // We can call a normal function (non monad returning or accepting) inside a Map or Bind
         }
 
 
         static int CalculateYourPension(int input)
         {
             return (input * 3) / 26;
-        }
-
-        static int DivideBy(int thisNumber, int dividedByThatNumber)
-        {
-            if (dividedByThatNumber == 0)
-                return 0;
-            return thisNumber / dividedByThatNumber;
         }
 
         static Option<int> DivideBy1(int thisNumber, int dividedByThatNumber)

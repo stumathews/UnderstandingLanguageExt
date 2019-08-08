@@ -7,7 +7,7 @@ using System.Security.Cryptography.X509Certificates;
 using LanguageExt;
 using LanguageExt.DataTypes.Serialisation;
 
-namespace Tutorial33
+namespace Tutorial34
 {
     // BiMap()
     class Program

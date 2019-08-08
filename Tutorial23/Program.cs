@@ -6,7 +6,8 @@ using LanguageExt.DataTypes.Serialisation;
 
 namespace Tutorial23
 {
-    // This tutorial shows you how you can transform a List of Eithers, effectively doing a Map on each either in the list, and this Bi variety allows you to specify how make provision to map/transform both types
+    // This tutorial shows you how you can transform a List of Eithers, effectively doing a Bind on each either in the list
+    // and a Bi variety allows you to specify how make provision to map/transform both types
     
     class Program
     {
@@ -36,8 +37,6 @@ namespace Tutorial23
             {
                 Console.WriteLine(str);
             }
-
         }
-        
     }      
 }

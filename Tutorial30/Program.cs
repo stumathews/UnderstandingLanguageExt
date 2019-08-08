@@ -8,7 +8,7 @@ using LanguageExt.DataTypes.Serialisation;
 
 namespace Tutorial30
 {
-
+    // Contrived example of passing around Option<T> arguments
     class Program
     {
         static void Main(string[] args)
@@ -35,9 +35,12 @@ namespace Tutorial30
 
         }
 
+        /// <summary>
+        /// Example of passing in a option monad
+        /// </summary>
         static Option<int> PerformPensionCalculations(Option<int> input)
         {
-            // Extract, Validate and transform it using Map
+            // Extract, Validate and transform it using Map (reember is a Monad)
             return input.Map(validInput => CalculateYourPension(validInput));
             // we can call a normal function (non monad returning or accepting) inside a Map or Bind
         }
@@ -46,13 +49,6 @@ namespace Tutorial30
         static int CalculateYourPension(int input)
         {
             return (input * 3) / 26;
-        }
-
-        static int DivideBy(int thisNumber, int dividedByThatNumber)
-        {
-            if (dividedByThatNumber == 0)
-                return 0;
-            return thisNumber / dividedByThatNumber;
         }
 
         static Option<int> DivideBy1(int thisNumber, int dividedByThatNumber)

@@ -5,82 +5,82 @@ VisualStudioVersion = 16.0.28922.388
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LanguageExtForNewDevelopersTutorial", "LanguageExtForNewDevelopersTutorial.csproj", "{C9CE3970-77BD-470A-986D-B394DF02F2F0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial02", "Tutorial02\Tutorial02.csproj", "{C564BF24-2489-4196-B788-3902003BA2DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial02 - transformations 1", "Tutorial02\Tutorial02 - transformations 1.csproj", "{C564BF24-2489-4196-B788-3902003BA2DB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial03", "Tutorial03\Tutorial03.csproj", "{51B4F093-B12E-4504-8A88-B2558F480587}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial03 - pipelines", "Tutorial03\Tutorial03 - pipelines.csproj", "{51B4F093-B12E-4504-8A88-B2558F480587}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial04", "Tutorial04\Tutorial04.csproj", "{E2DB556B-C0F2-47F7-87CF-940348BD1F80}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial04 - operations 1", "Tutorial04\Tutorial04 - operations 1.csproj", "{E2DB556B-C0F2-47F7-87CF-940348BD1F80}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial05", "Tutorial05\Tutorial05.csproj", "{84EBEF73-6854-4B18-B22B-BE1884343A1E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial05 - operations 2", "Tutorial05\Tutorial05 - operations 2.csproj", "{84EBEF73-6854-4B18-B22B-BE1884343A1E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial06", "Tutorial06\Tutorial06.csproj", "{3FAE6EB9-6814-4025-96E1-6C148DEB1188}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial06 - Linq", "Tutorial06\Tutorial06 - Linq.csproj", "{3FAE6EB9-6814-4025-96E1-6C148DEB1188}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial07", "Tutorial07\Tutorial07.csproj", "{D9ACB79D-723C-4136-A740-01D5A34DD77A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial07 - transformations 2", "Tutorial07\Tutorial07 - transformations 2.csproj", "{D9ACB79D-723C-4136-A740-01D5A34DD77A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial08", "Tutorial08\Tutorial08.csproj", "{ABBEC616-080F-470D-9004-8D4C1D760CC3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial08 - declarative style", "Tutorial08\Tutorial08 - declarative style.csproj", "{ABBEC616-080F-470D-9004-8D4C1D760CC3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial09", "Tutorial09\Tutorial09.csproj", "{A7791FE8-440A-4549-86AF-A88CE3C46805}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial09 - automatic validation", "Tutorial09\Tutorial09 - automatic validation.csproj", "{A7791FE8-440A-4549-86AF-A88CE3C46805}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial10", "Tutorial10\Tutorial10.csproj", "{92077F17-6E08-47C6-92F5-C1E6C6EAF401}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial10 - returning monads", "Tutorial10\Tutorial10 - returning monads.csproj", "{92077F17-6E08-47C6-92F5-C1E6C6EAF401}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial11", "Tutorial11\Tutorial11.csproj", "{0B454CB1-FBFB-4860-AE53-D6218E381C83}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial11 - short circuiting", "Tutorial11\Tutorial11 - short circuiting.csproj", "{0B454CB1-FBFB-4860-AE53-D6218E381C83}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0A25239A-ED02-4AF9-94D6-414D51D7BEB1}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial12", "Tutorial12\Tutorial12.csproj", "{BDCA9D69-550E-49A5-A9C4-C75227830D7A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial12 - function composition", "Tutorial12\Tutorial12 - function composition.csproj", "{BDCA9D69-550E-49A5-A9C4-C75227830D7A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial13", "Tutorial13\Tutorial13.csproj", "{6394A341-70AF-48D1-80E4-64C6157462F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial13 - pure functions", "Tutorial13\Tutorial13 - pure functions.csproj", "{6394A341-70AF-48D1-80E4-64C6157462F7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial14", "Tutorial14\Tutorial14.csproj", "{007FC05F-3734-4911-A02D-A0CC94BD858C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial14 - Intro to Eithers", "Tutorial14\Tutorial14 - Intro to Eithers.csproj", "{007FC05F-3734-4911-A02D-A0CC94BD858C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial15", "Tutorial15\Tutorial15.csproj", "{5055BFB5-487B-424F-ABF8-4E8A15991CBE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial15 - BiBind()", "Tutorial15\Tutorial15 - BiBind().csproj", "{5055BFB5-487B-424F-ABF8-4E8A15991CBE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial16", "Tutorial16\Tutorial16.csproj", "{0FA5C7F5-276E-433A-BC66-1F9E68BB1DCE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial16 - BiExists()", "Tutorial16\Tutorial16 - BiExists().csproj", "{0FA5C7F5-276E-433A-BC66-1F9E68BB1DCE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial17", "Tutorial17\Tutorial17.csproj", "{91F012BC-1F0D-4A61-BE2D-B64D9761591D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial17 - Fold()", "Tutorial17\Tutorial17 - Fold().csproj", "{91F012BC-1F0D-4A61-BE2D-B64D9761591D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial18", "Tutorial18\Tutorial18.csproj", "{FBEB6DB3-41D4-4866-8D50-C2C03CA13C3B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial18 - Iter()", "Tutorial18\Tutorial18 - Iter().csproj", "{FBEB6DB3-41D4-4866-8D50-C2C03CA13C3B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial19", "Tutorial19\Tutorial19.csproj", "{58DED9EF-6D56-4840-87D7-9C60F89E4598}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial19 - BiMap()", "Tutorial19\Tutorial19 - BiMap().csproj", "{58DED9EF-6D56-4840-87D7-9C60F89E4598}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial20", "Tutorial20\Tutorial20.csproj", "{5BC5DF52-1819-4615-811D-EFC37C61CAC4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial20 - BindLeft()", "Tutorial20\Tutorial20 - BindLeft().csproj", "{5BC5DF52-1819-4615-811D-EFC37C61CAC4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial21", "Tutorial21\Tutorial21.csproj", "{9975B40F-EF1D-4FDD-BFF7-ED9ADDABC6D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial21 - Match()", "Tutorial21\Tutorial21 - Match().csproj", "{9975B40F-EF1D-4FDD-BFF7-ED9ADDABC6D5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial22", "Tutorial22\Tutorial22.csproj", "{738B7D3A-E90A-4B9B-85DA-9023FA181540}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial22 - BiMapT() and MapT()", "Tutorial22\Tutorial22 - BiMapT() and MapT().csproj", "{738B7D3A-E90A-4B9B-85DA-9023FA181540}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial23", "Tutorial23\Tutorial23.csproj", "{FC743B2E-B029-4D39-8747-D227B27C1355}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial23 - BindT()", "Tutorial23\Tutorial23 - BindT().csproj", "{FC743B2E-B029-4D39-8747-D227B27C1355}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial24", "Tutorial24\Tutorial24.csproj", "{B198D511-693D-4365-B2AE-F18344B2CFF7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial24 - IterT()", "Tutorial24\Tutorial24 - IterT().csproj", "{B198D511-693D-4365-B2AE-F18344B2CFF7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial25", "Tutorial25\Tutorial25.csproj", "{0B51DF53-D3C6-4390-9027-53EBF8F795D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial25 - Apply()", "Tutorial25\Tutorial25 - Apply().csproj", "{0B51DF53-D3C6-4390-9027-53EBF8F795D6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial26", "Tutorial26\Tutorial26.csproj", "{B5ED7515-DF6B-432A-A3FB-514EABC6D773}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial26 - Partition()", "Tutorial26\Tutorial26 - Partition().csproj", "{B5ED7515-DF6B-432A-A3FB-514EABC6D773}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial27", "Tutorial27\Tutorial27.csproj", "{C3B3E472-EC97-447A-9FBF-E7E338E4DF88}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial27 - Match()", "Tutorial27\Tutorial27 - Match().csproj", "{C3B3E472-EC97-447A-9FBF-E7E338E4DF88}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial28", "Tutorial28\Tutorial28.csproj", "{760DAE45-9626-48C4-9000-127351D018C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial28 - Intro to Option", "Tutorial28\Tutorial28 - Intro to Option.csproj", "{760DAE45-9626-48C4-9000-127351D018C5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial29", "Tutorial29\Tutorial29.csproj", "{0394CB48-757E-4C0D-86EA-E6B5A96EBB2F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial29 - Option Basics", "Tutorial29\Tutorial29 - Option Basics.csproj", "{0394CB48-757E-4C0D-86EA-E6B5A96EBB2F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial30", "Tutorial30\Tutorial30.csproj", "{EEB6A43C-D07B-4F4B-B1C0-E9A0A3287E60}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial30 - Option in functions", "Tutorial30\Tutorial30 - Option in functions.csproj", "{EEB6A43C-D07B-4F4B-B1C0-E9A0A3287E60}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial31", "Tutorial31\Tutorial31.csproj", "{EA96272C-0CC6-4FD6-A16B-6949497D62E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial31 - IfSome() and IfNone()", "Tutorial31\Tutorial31 - IfSome() and IfNone().csproj", "{EA96272C-0CC6-4FD6-A16B-6949497D62E9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial32", "Tutorial32\Tutorial32.csproj", "{BBADF5F9-7440-4C79-90A2-4F6148DF22A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial32 - Pipelining with Options", "Tutorial32\Tutorial32 - Pipelining with Options.csproj", "{BBADF5F9-7440-4C79-90A2-4F6148DF22A5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial01", "Tutorial01\Tutorial01.csproj", "{50B86361-8051-4033-956D-1C83E29A059D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial01 - monad", "Tutorial01\Tutorial01 - monad.csproj", "{50B86361-8051-4033-956D-1C83E29A059D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial33", "Tutorial33\Tutorial33.csproj", "{CB12E36D-09D1-4408-B0F5-6D41EC6D897E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial33 - ToEither", "Tutorial33\Tutorial33 - ToEither.csproj", "{CB12E36D-09D1-4408-B0F5-6D41EC6D897E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial34", "Tutorial34\Tutorial34.csproj", "{FF4C809F-3906-4EA1-81A1-827055D14DB9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial34 - BiMap()", "Tutorial34\Tutorial34 - BiMap().csproj", "{FF4C809F-3906-4EA1-81A1-827055D14DB9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial35", "Tutorial35\Tutorial35.csproj", "{5121412C-7555-418E-946D-AA209155DDB1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial35 - ThrowIfFailed()", "Tutorial35\Tutorial35 - ThrowIfFailed().csproj", "{5121412C-7555-418E-946D-AA209155DDB1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial36", "Tutorial36\Tutorial36.csproj", "{CF7D4818-DE7A-4199-ABF2-48425EB52206}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial36 - FailureToNone", "Tutorial36\Tutorial36 - FailureToNone.csproj", "{CF7D4818-DE7A-4199-ABF2-48425EB52206}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

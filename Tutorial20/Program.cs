@@ -6,7 +6,8 @@ using LanguageExt.DataTypes.Serialisation;
 
 namespace Tutorial20
 {
-    // Shows the basics of Either<L,R>, using BindLeft() to make provision for a transform function forthe left types of the either. The transform is NOT automatically lifted(this is a bind() after all).
+    // Shows the basics of Either<L,R>, using BindLeft() to make provision for a transform function forthe left types of the either.
+    // The transform is NOT automatically lifted(this is a bind() after all).
 
     class Program
     {
@@ -15,6 +16,7 @@ namespace Tutorial20
             Either<int, string> intOrString = "Stuart";
 
             // Transform the left hand side, remember bind will not automatically life the result of that transformation, so you transformation function will need to do that
+            // We call BindLeft because by default Either is right biased so default Bind() only transforms the right side if there is one(there there isn't as we've assigned a right value of string 'Stuart'
             var result = intOrString.BindLeft(left => TransformLeft(left));
 
             // Note the transformation did not occur because either contained a right type ie string

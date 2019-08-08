@@ -15,14 +15,14 @@ namespace Tutorial33
         static void Main(string[] args)
         {
             //Procedural way 
-
-            var step1 = DivideBy(225, 5);
+            int startingAmount = 225;
+            var step1 = DivideBy(startingAmount, 5);
             var step2 = Add5ToIt(step1);
             var result = PerformPensionCalculations(step2);
             
 
             // Fluent way
-            Option<int> result1 = DivideBy1(225, 5)
+            Option<int> result1 = DivideBy1(startingAmount, 5)
                                 .Bind(input => Add5ToIt1(input))
                                 .Bind(input => PerformPensionCalculations1(input));
 

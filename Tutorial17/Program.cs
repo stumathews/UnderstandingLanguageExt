@@ -6,7 +6,7 @@ using LanguageExt.DataTypes.Serialisation;
 
 namespace Tutorial17
 {
-    // This tutorial shows you what a what an Either<> type is and how to use 
+    // This tutorial shows you what fold() does
     
     class Program
     {

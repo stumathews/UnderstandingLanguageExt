@@ -14,19 +14,20 @@ namespace Tutorial32
     {
         static void Main(string[] args)
         {
-            //Procedural way 
+            int startingAmount = 225;
 
-            var step1 = DivideBy(225, 5);
+            // Procedural way
+            var step1 = DivideBy(startingAmount, 5);
             var step2 = Add5ToIt(step1);
             var result = PerformPensionCalculations(step2);
 
             // Fluent way
-            Option<int> result1 = DivideBy1(225, 5)
+            Option<int> result1 = DivideBy1(startingAmount, 5)
                                         .Bind(input => Add5ToIt1(input))
                                         .Bind(input => PerformPensionCalculations1(input));
 
             // Expression way 
-            Option<int> result2 = from input1 in DivideBy1(225, 5)
+            Option<int> result2 = from input1 in DivideBy1(startingAmount, 5)
                 from input2 in Add5ToIt1(input1)
                 from input3 in PerformPensionCalculations1(input2)
                 select input3;
@@ -40,7 +41,6 @@ namespace Tutorial32
 
         static int PerformPensionCalculations(int input)
             => CalculateYourPension(input);
-
 
         static int CalculateYourPension(int input) 
             => (input * 3) / 26;

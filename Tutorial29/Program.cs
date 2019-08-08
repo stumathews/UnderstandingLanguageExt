@@ -8,13 +8,12 @@ using LanguageExt.DataTypes.Serialisation;
 
 namespace Tutorial29
 {
-
     class Program
     {
         static void Main(string[] args)
         {
-            var resultA = DivideBy(25, 5);
-            var resultB = DivideBy1(25, 0);
+            int         resultA = DivideBy(25, 5);
+            Option<int> resultB = DivideBy1(25, 0);
 
             Console.WriteLine($"The result A is '{resultA}' and B is '{resultB}'");
 
@@ -30,6 +29,13 @@ namespace Tutorial29
             Console.WriteLine($"The result A is '{result1}' and B is '{result2}'");
         }
 
+
+        /// <summary>
+        /// Normal function, not using optional parameters
+        /// </summary>
+        /// <param name="thisNumber"></param>
+        /// <param name="dividedByThatNumber"></param>
+        /// <returns>integer</returns>
         static int DivideBy(int thisNumber, int dividedByThatNumber)
         {
             if (dividedByThatNumber == 0)
@@ -37,6 +43,10 @@ namespace Tutorial29
             return thisNumber / dividedByThatNumber;
         }
 
+        /// <summary>
+        /// Function returns Monad, one construct that represents both failure and success.
+        /// </summary>
+        /// <returns>Option of an integer</returns>
         static Option<int> DivideBy1(int thisNumber, int dividedByThatNumber)
         {
             if (dividedByThatNumber == 0)

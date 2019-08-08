@@ -20,6 +20,7 @@ namespace Tutorial15
             amount = word;
 
             // Instead of only being able to run a transform on the right hand side only as bind() does, you can use BiBind() to prepare transform functions for whatever side, left or right type is assigned to it!
+            // The result is the result of whichever bind run, depending which state the either is in (left=has integer)(right=has string)
             var resultOfTransform = amount.BiBind(rightString => TransformExtractedRight(rightString), leftInteger => TransformExtractedLeft(leftInteger));
 
             Console.WriteLine($"the result of the transform is {resultOfTransform}");
