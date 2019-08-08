@@ -37,7 +37,7 @@ namespace Tutorial01
 
         
     }
-
+    
     public static class BoxMethods
     { 
         /// <summary>
@@ -96,8 +96,8 @@ namespace Tutorial01
             //Extract 
             TA extract = box.Item;
 
-            // Transform and lift
-            Box<TB> transformedAndLifted = bind(extract);
+            // Transform and the user-defined function
+            Box<TB> transformedAndLifted = bind(extract); //  should return its results of its transformation in a Box 
 
             return transformedAndLifted;
         }
@@ -115,7 +115,7 @@ namespace Tutorial01
             TA extract = box.Item;
 
             // Transform
-            TB transformed = select(extract);
+            TB transformed = select(extract); // user provided function does not need to 'lift' its result into a Box like Bind() requires 
 
             // Lift
             return new Box<TB>(transformed);
