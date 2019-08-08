@@ -62,7 +62,7 @@ The general tutorial is structured like this:
 # Custom Specific 
 * Tutorial35 - Using custom extension method ThrowIfFailed() and introducing Either<IAmFailure, Option<T>> as a standard return type for all functions
 * Tutorial36 - Using custom extension method FailureToNone()
-# Work in progress
+# Todo
 * TutorialA - Partial Functions - Allowing multiple arguments to be 'baked' in and still appear as Math like functions (pure functions)
 * TutorialB - Immutability - Smart constructors, Immutable data-types
 * TutorialC - Caching
