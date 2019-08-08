@@ -4,11 +4,13 @@ This is a tutorial that aims to demonstrate the fundamentals behind using Langua
 
 Furthermore, the tutorial shows how to use ideas such as pipelineing, delcarative style coding and walks through the fundamentals behind Select() SelectMany() and Bind() and Map() while covering implementation via Linq's Fluent and Linq Expression syntax.
 
+The general flow of ideas are 
+
 # The Basics
 * Tutorial01 - Introduction to the Box type (a Monad)
 * Tutorial02 - Shows you how to use Map and Bind (also construction of a Mondad Type)
 * Tutorial03 - Shows how Bind is used to create a pipeline of function calls
-* Tutorial04 - Performing operations on a Box using Map() and Bind(), Select and SelectMany()
+* Tutorial04 - Performing operations on a Box using Map() and Bind(), Select() and introducing SelectMany()
 * Tutorial05 - More examples of performing operations on a Box
 * Tutorial06 - This tutorial shows you how pipelining is used to call funtions using Linq Fluent and Expression syntax
 * Tutorial07 - Shows you when to use Map() and Bind()
