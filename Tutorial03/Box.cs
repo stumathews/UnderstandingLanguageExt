@@ -60,30 +60,6 @@ namespace Tutorial01
         }
 
         /// <summary>
-        /// Validate, Extract, Transform, Project(Transform, Extract)
-        /// </summary>
-       
-        public static Box<TC> SelectMany<TA, TF, TC>(this Box<TA> box, Func<TA, Box<TF>> bind /*liftTo*/, Func<TA, TF, TC> project)
-        {
-            // Validate
-            if(box.IsEmpty)
-                return new Box<TC>();
-            
-            // Extract
-            var extract = box.Item;
-
-            // Transform and LiftTo
-            Box<TF> liftedResult = bind(extract);
-
-            if(liftedResult.IsEmpty)
-                return new Box<TC>();
-            
-            // Project/Combine
-            TC t2 = project(extract, liftedResult.Item);
-            return new Box<TC>(t2);
-        }
-
-        /// <summary>
         /// Validate, Extract, Transform and Lift (If Valid)
         /// Check/Validate then transform to T and lift into Box<T>
         /// </summary>

@@ -9,9 +9,9 @@ namespace Tutorial11
     {
         static void Main(string[] args)
         {
-            Box<int[]> aBoxOfNumbers1 = new Box<int[]>( new int[] {1,2,3,4,5 });
-            Box<int[]> aBoxOfNumbers2 = new Box<int[]>(); // empty box
-            Box<int[]> aBoxOfNumbers3 = new Box<int[]>( new int[] {6, 7, 8, 9, 10 });
+            var aBoxOfNumbers1 = new Box<int[]>( new int[] {1,2,3,4,5 });
+            var aBoxOfNumbers2 = new Box<int[]>(); // empty box
+            var aBoxOfNumbers3 = new Box<int[]>( new int[] {6, 7, 8, 9, 10 });
 
             // The way Box's validation step works in its Bind/Map functions says thet an empty box is invalid.
             // Further more we cannot process any boxes if even one box is empty:
@@ -21,6 +21,7 @@ namespace Tutorial11
                     from number3 in aBoxOfNumbers3 // this does run, but it just bails out at the Validation phase in the bind()'s VETL stage
                     select number3;
 
+         
             Console.WriteLine($"The result is: {result}");
 
         }

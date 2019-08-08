@@ -25,11 +25,11 @@ namespace Tutorial07
                 .Bind(transformed => DoubleNumbers(transformed))
                 .Bind(transformed => DoubleNumbers(transformed))
                 .Bind(transformed => DoubleNumbers(transformed))
-                .Map(transformed => Dosomethingwith(transformed)); 
+                .Map(transformed => Dosomethingwith(transformed)); // note that because Dosomethingwith() doesn't return a Box, use Map to automatically do that with the result 
 
             // This shows that you can use either map or bind (they do the same thing ie both transform their input) but map will lift automatically and bind needs its transform
             // function to do that.
-            // This dicision of using map or bind will ipact on how the subsequent functions deal with either a lifted or a non-lifted result.
+            // This choice of using map or bind will impact on how the subsequent functions deal with either a lifted or a non-lifted result.
             // So depending on what transformation function you use on the prior input, will affect how the next step deals with either
             // a lifted result or a non-lifted result
             Box<int[]> doubleDouble1 = boxOfIntegers
@@ -43,7 +43,7 @@ namespace Tutorial07
 
         private static object Dosomethingwith(params int[][] varargs)
         {
-            // Note we dont have to return a Box<> because as we''ll be running within a SelectMany() it automatically lifts the result in this case a object type
+            // Note we don't have to return a Box<> because as we''ll be running within a SelectMany() it automatically lifts the result in this case a object type
             return new object();
             // Note that this function will be acting as the bind() transformation function within the SelectMany() function
         }

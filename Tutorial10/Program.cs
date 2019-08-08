@@ -30,7 +30,7 @@ namespace Tutorial10
          * Map and Both are equivalent in as much as they perform VETL but differ in what form they require their transform function to either lift or not lift the transformation
          * In the Linq Syntax query method, Box's SelectMany() is used to transform successive transformations.
          * You have access to each of the transformed results in subsequent transformations below. 
-         * The final select statment is the Box's Select() function and therefor it will automatically be lifted and you dont need to do it.
+         * The final select statement is the Box's Select() function and therefor it will automatically be lifted and you dont need to do it.
          * The Fluent mechanism, used Box's Map and Bind functions. 
          * Each Map and Bind has access to the last transformation before it, and unlike the linq expression syntax cannot see beyond the last transformation (as that is the input it gets)
          * transformations from a call to Bind and Map must result in a Box<> either explicitly via Bind() or automatically via Map()

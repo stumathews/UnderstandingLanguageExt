@@ -14,7 +14,7 @@ Furthermore, the tutorial shows how to use ideas such as pipelineing, delcarativ
 * Tutorial07 - Shows you when to use Map() and Bind()
 * Tutorial08 - Shows you how to transition from Imperative style coding to Declarative style coding with an example
 * Tutorial09 - Shows you that pipelines include automatic validation
-* Tutorial10 - Expands on Tutorial09 to show that transofmration function always return a Monad
+* Tutorial10 - Expands on Tutorial09 to show that transformation function always return a Monad
 * Tutorial11 - Shows how monad built in validation, affords short-cuircuiting functionality.
 * Tutorial12 - Composition of functions
 * Tutorial13 - Pure Functions - immutable functions with now side effects ie mathematically correct

@@ -78,7 +78,7 @@ namespace Tutorial01
                 return new Box<TC>();
             
             // Project/Combine
-            TC t2 = project(extract, liftedResult.Item);
+            TC t2 = project(extract, liftedResult.Item); // This forms the select xzy in the Linq Expression in the tutorial.
             return new Box<TC>(t2);
         }
 

@@ -16,19 +16,20 @@ namespace Tutorial05
             // Do something with or to the Box
 
             var doubled1 = boxOfIntegers
-                            .Bind(extract => new Box<int[]>(extract.Select(x => x * 2).ToArray())); 
+                            .Bind(extract => new Box<int[]>(extract.Select(x => x * 2).ToArray())); // Extract, Validate and transform using Bind()
 
             var doubled2 = boxOfIntegers
-                            .Map(numbers => numbers.Select(x => x * 2).ToArray());
-            
-            var doubled3 = from extract in boxOfIntegers
-                from transformed in DoubleNumbers(extract) // bind() part of SelectMany() ie transform extracted value 
+                            .Map(numbers => numbers.Select(x => x * 2).ToArray()); // Extract, Validate and transform using Bind()
+
+            // Extract, Validate and transform using SelectMany()
+            var doubled3 = from extract in boxOfIntegers 
+                           from transformed in DoubleNumbers(extract) // bind() part of SelectMany() ie transform extracted value 
                 select transformed; // project(extract, transformedAndLiftedResult) part of SelectMany
             
             var doubled4 = from extract in boxOfIntegers
                 select DoubleNumbers(extract).Extract; // Use Select via linq expression syntax
-
-
+            
+            // Note we can use Map or Bind, but it becomes nessesary to use a Specific one depending on if or not the provided transformation function returns a box or not (lifts or doesn't)
             Box<int[]> doubleDouble1 = boxOfIntegers
                 .Bind(numbers => DoubleNumbers(numbers))
                 .Map(DoubleNumbers)
@@ -40,11 +41,9 @@ namespace Tutorial05
                 
             
             // Give me a box of Double Double of my Box
-            var doubleDouble3 = from firstDouble in DoubleMyBox(boxOfIntegers)
-                                from reDouble in DoubleNumbers(firstDouble) //VET: bind part of SelectMany()
-                                    select reDouble; // project(reDouble, firstDouble)
-
-
+            var doubleDouble3 = from firstDoubleTransformation in DoubleMyBox(boxOfIntegers)
+                                from secondDoubleTransformation in DoubleNumbers(firstDoubleTransformation) //VET: bind part of SelectMany()
+                                    select secondDoubleTransformation; // project(reDouble, firstDouble)
         }
 
         /// <summary>

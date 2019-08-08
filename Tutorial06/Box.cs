@@ -63,7 +63,7 @@ namespace Tutorial06
         /// Validate, Extract, Transform, Project(Transform, Extract) and automatic Lift
         /// </summary>
        
-        public static Box<TC> SelectMany<TA, TB, TC>(this Box<TA> box, Func<TA, Box<TB>> bind /*liftTo*/, Func<TA, TB, TC> project)
+        public static Box<TC> SelectMany<TA, TB, TC>(this Box<TA> box, Func<TA, Box<TB>> bind /*liftTo*/, Func<TA, TB, TC> project) //Notice that the transformation function in SelectMany() is actually called bind()
         {
             // Validate
             if(box.IsEmpty)
