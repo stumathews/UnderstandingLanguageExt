@@ -1,7 +1,8 @@
 # Language.Ext for new developers
 
-An initial tutorial showing how to use ideas such as pipelineing, delcarative style coding and walks through the fundamentals behind Select() SelectMany() and Bind() and Map() while covering implementation via Linq's Fluent and Linq Expression syntax.
-The tutorials go through the followng concepts
+This is a tutorial that aims to demonstrate the fundamentals behind using LanguageExt in a practical fashion though step-by-step tutorials which introduce and then build up on concepts.
+
+Furthermore, the tutorial shows how to use ideas such as pipelineing, delcarative style coding and walks through the fundamentals behind Select() SelectMany() and Bind() and Map() while covering implementation via Linq's Fluent and Linq Expression syntax.
 
 # The Basics
 * Tutorial01 - Introduction to the Box type (a Monad)
