@@ -4,7 +4,21 @@ This is a tutorial that aims to demonstrate the fundamentals behind using Langua
 
 Furthermore, the tutorial shows how to use ideas such as pipelineing, delcarative style coding and walks through the fundamentals behind Select() SelectMany() and Bind() and Map() while covering implementation via Linq's Fluent and Linq Expression syntax.
 
-The general flow of ideas are 
+The general tutorial is structured like this:
+
+* Monads
+* Map/Bind
+* Fluent/Expression Linq
+* Pipelining
+* Declarative Style
+* Monad Validation
+* Function Composition
+* Pure Functions
+* Basics of Either<L,R>
+* Operations with Lists Eithers<,>
+* Basics of Option<T>
+* ThrowIfFailed()
+* FailureToNone()
 
 # The Basics
 * Tutorial01 - Introduction to the Box type (a Monad)
