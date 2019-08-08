@@ -18,7 +18,7 @@ namespace Tutorial12
             var encrypted = EncryptWord("Stuart");
 
             Console.WriteLine($"The encrypted word is '{encrypted}'");
-
+            
         }
 
         
@@ -88,3 +88,8 @@ namespace Tutorial12
             => input => originalFunction(converterFunction(input));
     }      
 }
+
+/*
+ * Note: It can be considered that the pipelineing effect produced by chaining Map().Map().Map() is also function composition,
+ * where you've composed one action as a composition of transformation
+ */
