@@ -39,6 +39,10 @@
     <Compile Remove="Tutorial30\**" />
     <Compile Remove="Tutorial31\**" />
     <Compile Remove="Tutorial32\**" />
+    <Compile Remove="Tutorial33\**" />
+    <Compile Remove="Tutorial34\**" />
+    <Compile Remove="Tutorial35\**" />
+    <Compile Remove="Tutorial36\**" />
     <EmbeddedResource Remove="Tutorial01\**" />
     <EmbeddedResource Remove="Tutorial02\**" />
     <EmbeddedResource Remove="Tutorial03\**" />
@@ -72,6 +76,10 @@
     <EmbeddedResource Remove="Tutorial30\**" />
     <EmbeddedResource Remove="Tutorial31\**" />
     <EmbeddedResource Remove="Tutorial32\**" />
+    <EmbeddedResource Remove="Tutorial33\**" />
+    <EmbeddedResource Remove="Tutorial34\**" />
+    <EmbeddedResource Remove="Tutorial35\**" />
+    <EmbeddedResource Remove="Tutorial36\**" />
     <None Remove="Tutorial01\**" />
     <None Remove="Tutorial02\**" />
     <None Remove="Tutorial03\**" />
@@ -105,6 +113,10 @@
     <None Remove="Tutorial30\**" />
     <None Remove="Tutorial31\**" />
     <None Remove="Tutorial32\**" />
+    <None Remove="Tutorial33\**" />
+    <None Remove="Tutorial34\**" />
+    <None Remove="Tutorial35\**" />
+    <None Remove="Tutorial36\**" />
   </ItemGroup>
 
   <ItemGroup>

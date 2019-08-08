@@ -6,8 +6,7 @@ namespace LanguageExtForNewDevelopersTutorial
     {
         static void Main(string[] args)
         {
-            
-
+            return;
         }
     }
 }
