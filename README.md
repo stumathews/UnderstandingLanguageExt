@@ -79,3 +79,4 @@ References:
 
 https://stackoverflow.com/questions/28139259/why-do-we-need-monads Why do we need monads? 
 https://github.com/louthy/language-ext/wiki LanguageExt Wiki
+http://www.stuartmathews.com/index.php/component/tags/tag/functional-prograqmming My articles on Functional programming(old)
