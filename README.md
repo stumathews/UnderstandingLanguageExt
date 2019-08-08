@@ -1,4 +1,4 @@
-# Understanding Language.Ext for new developers
+# Understanding Language.Ext
 
 This is a tutorial that aims to demonstrate the fundamentals behind using LanguageExt in a practical fashion though step-by-step tutorials which introduce and then build up on concepts.
 
