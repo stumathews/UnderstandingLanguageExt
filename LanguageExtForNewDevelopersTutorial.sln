@@ -9,9 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial02 - transformation
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial03 - pipelines", "Tutorial03\Tutorial03 - pipelines.csproj", "{51B4F093-B12E-4504-8A88-B2558F480587}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial04 - operations 1", "Tutorial04\Tutorial04 - operations 1.csproj", "{E2DB556B-C0F2-47F7-87CF-940348BD1F80}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial04 - methods 1", "Tutorial04\Tutorial04 - methods 1.csproj", "{E2DB556B-C0F2-47F7-87CF-940348BD1F80}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial05 - operations 2", "Tutorial05\Tutorial05 - operations 2.csproj", "{84EBEF73-6854-4B18-B22B-BE1884343A1E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial05 - methods 2", "Tutorial05\Tutorial05 - methods 2.csproj", "{84EBEF73-6854-4B18-B22B-BE1884343A1E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial06 - Linq", "Tutorial06\Tutorial06 - Linq.csproj", "{3FAE6EB9-6814-4025-96E1-6C148DEB1188}"
 EndProject

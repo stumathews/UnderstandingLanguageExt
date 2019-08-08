@@ -39,15 +39,9 @@ namespace Tutorial35
             // Do some validation and fail fast, otherwise return the value
             return input.Map(CalculateYourPension); //Retrun Option<T> 
         }
-        
-        static int PerformPensionCalculations(int input)
-            => CalculateYourPension(input);
 
         static int CalculateYourPension(int input) 
             => (input * 3) / 26;
-
-        static int DivideBy(int thisNumber, int dividedByThatNumber) 
-            => dividedByThatNumber == 0 ? 0 : thisNumber / dividedByThatNumber;
 
         static Option<int> DivideBy1(int thisNumber, int dividedByThatNumber) =>
             dividedByThatNumber != 0 
@@ -64,8 +58,5 @@ namespace Tutorial35
                 return new GenericFailure("must be greater than 12");
             return input.Map(validInput => validInput + 5); //Return Option<T>
         }
-
-        static int Add5ToIt(int input)
-            => input + 5;
     }      
 }
