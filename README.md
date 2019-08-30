@@ -20,6 +20,8 @@ The general tutorial is structured like this:
 * ThrowIfFailed()
 * FailureToNone()
 
+Note: To run any specific tutorial, right-click on the project in the solution explorer and 'Set as start-up project'
+
 # The Basics
 * Tutorial01 - Introduction to the Box type (a Monad)
 * Tutorial02 - Shows you how to use Map and Bind (also construction of a Mondad Type)
@@ -74,6 +76,7 @@ The general tutorial is structured like this:
 * TutorialH - Map, HashSt, Set LanguageExt collections
 * TutorialI - Changing state over time (Fold)
 * TutorialJ - Custom useful Monad Extensions
+
 
 
 References:
