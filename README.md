@@ -62,10 +62,11 @@ The general tutorial is structured like this:
 # Custom Specific 
 * Tutorial35 - Using custom extension method ThrowIfFailed() and introducing Either<IAmFailure, Option<T>> as a standard return type for all functions
 * Tutorial36 - Using custom extension method FailureToNone()
+# Misc
+* Tutorial37 - Using pure functions to cache things, ensuring that you need not call expensive calls if they've been done once already.
 # Todo
 * TutorialA - Partial Functions - Allowing multiple arguments to be 'baked' in and still appear as Math like functions (pure functions)
 * TutorialB - Immutability - Smart constructors, Immutable data-types
-* TutorialC - Caching
 * TutorialD - Threading and parallelism benfits
 * TutorialE - Guidelines for writing immutable code, starting with IO on the fringes (bycicle spoke design)
 * TutorialF - Immutable Collection types in Language Ext
