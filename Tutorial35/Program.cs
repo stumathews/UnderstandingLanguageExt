@@ -38,7 +38,7 @@ namespace Tutorial35
             if (!isGreaterThan100)
                 return new GenericFailure("Must be greater than 100");
             // Do some validation and fail fast, otherwise return the value
-            return input.Map(CalculateYourPension); //Retrun Option<T> 
+            return input.Map(CalculateYourPension); //return Option<T> 
         }
 
         static int CalculateYourPension(int input) 
