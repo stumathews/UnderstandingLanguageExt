@@ -11,8 +11,9 @@ using Tutorial35;
 namespace Tutorial35
 {
     // ThrowIfFailed and the standard wrapped return type Option<T> - wrapped in an Either of that or a failure.
-    // T can be any type your function deals with, as you'd use in any normal function you create, only you make it an Option. You also bundle with your return type a failure if there is one, by 
-    // returning an all enconcompassing return value of Either<IAmFailure, Option<T>>
+    // T can be any type your function deals with, as you'd use in any normal function you create, only you make it an Option. 
+    // You also bundle with your return type a failure if there is one, by returning an all enconcompassing return value of Either<IAmFailure, Option<T>>
+    
     class Program
     {
         static void Main(string[] args)
@@ -20,15 +21,15 @@ namespace Tutorial35
            // Note that a common Either of form Either<IAmFailure, Option<T>> is used here to 
            // 1) Communicate if there anything or any reason while processing the Option<T> that is eroneous - that will then failfast and return a IAmFailure ie Either in Left state
            // 2) If there wasn't while inspecting the Option<T> return that or a transformation of that ie an Option<T> 
-            var result1 = DivideBy1(225, 5)
-                                .Bind(input => Add5ToIt1(input).ThrowIfFailed()) // throw if failed either, otherwise return the right value
-                                .Bind(input => PerformPensionCalculations1(input).ThrowIfFailed()); // Inspect for either for a failure and throw if it is, otherwise return the value as-is
+            var result1 = DivideBy(225, 5)
+                                .Bind(input => Add5ToIt(input).ThrowIfFailed()) // throw if failed either, otherwise return the right value
+                                .Bind(input => PerformPensionCalculations(input).ThrowIfFailed()); // Inspect for either for a failure and throw if it is, otherwise return the value as-is
             
             Console.WriteLine($"The result is '{result1}'");
 
         }
 
-        static Either<IAmFailure, Option<int>> PerformPensionCalculations1(Option<int> input)
+        static Either<IAmFailure, Option<int>> PerformPensionCalculations(Option<int> input)
         {
             /* Remember, We can return a IAmFailure or a Option<int> */
 
@@ -43,12 +44,12 @@ namespace Tutorial35
         static int CalculateYourPension(int input) 
             => (input * 3) / 26;
 
-        static Option<int> DivideBy1(int thisNumber, int dividedByThatNumber) =>
+        static Option<int> DivideBy(int thisNumber, int dividedByThatNumber) =>
             dividedByThatNumber != 0 
                 ? thisNumber / dividedByThatNumber 
                 : Option<int>.None;
 
-        static Either<IAmFailure, Option<int>> Add5ToIt1(Option<int> input)
+        static Either<IAmFailure, Option<int>> Add5ToIt(Option<int> input)
         {
             // arbitary test
             var isValid = input.Match(Some: number => number > 12, None: false);
