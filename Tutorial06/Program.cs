@@ -41,7 +41,7 @@ namespace Tutorial06
                 .Bind(transformed => DoubleNumbers(transformed))
                 .Bind(transformed => DoubleNumbers(transformed))
                 .Map(lastTransformedFromAbove => DoSomethingWith(lastTransformedFromAbove)); // I have to use map here because DoSomethingWith() does not return a Box and the result of a Map(will always do that) or Bind must do make its transform function do that
-            
+                      
         }
 
         // Perfect Map function to use with a Map as map will automatically lift this and so this function does not have to lift its result

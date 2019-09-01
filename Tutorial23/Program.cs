@@ -23,7 +23,7 @@ namespace Tutorial23
 
             // transform the right values (if they are there) for each either in the list
             // As this is a bind, you need to lisft the result in to a Either
-            listOfEithers.BindT(rightString => TransformRight(rightString));
+            var transformedList = listOfEithers.BindT(rightString => TransformRight(rightString));
 
             Either<int, string> TransformRight(string rightString)
             {
@@ -31,7 +31,7 @@ namespace Tutorial23
                 return t;
             }
 
-            var newRights = listOfEithers.Rights(); /* note we dont care care about the lefts, 
+            var newRights = transformedList.Rights(); /* note we dont care care about the lefts, 
             if we did we migth you match to see what both left and right values would be if they are set on the eithers we are looking at - see Tutorial 22 */
             foreach (var str in newRights)
             {

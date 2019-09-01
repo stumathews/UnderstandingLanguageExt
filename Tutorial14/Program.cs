@@ -12,8 +12,6 @@ namespace Tutorial14
     {
         static void Main(string[] args)
         {
-
-            int number = 5;
             string word = "five";
 
             // Note: We're creating an either with the left type as int and the right type as string.
