@@ -76,13 +76,9 @@ Note: To run any specific tutorial, right-click on the project in the solution e
 * Tutorial39 - Immutability - Designing your objects with immutability in mind: Smart constructors and Immutable data-types
 # Todo
 * TutorialA - Partial Functions - Allowing multiple arguments to be 'baked' in and still appear as Math like functions (pure functions)
-* TutorialD - Threading and parallelism benfits
-* TutorialE - Guidelines for writing immutable code, starting with IO on the fringes (bycicle spoke design)
-* TutorialF - Immutable Collection types in Language Ext
-* TutorialG - Spoke and wheel model
-* TutorialH - Map, HashSt, Set LanguageExt collections
-
-* TutorialJ - Custom useful Monad Extensions
+* TutorialB - Threading and parallelism benfits
+* TutorialC - Guidelines for writing immutable code, starting with IO on the fringes (bycicle spoke design)
+* TutorialD - Custom useful Monad Extensions
 
 
 
