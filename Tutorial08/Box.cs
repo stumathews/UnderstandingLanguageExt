@@ -10,7 +10,7 @@ namespace Tutorial08
     /// <summary>
     /// A box can hold 1 thing only
     /// </summary>
-    /// <typeparam name="T"></typeparam>
+    /// <typeparam name="T">The type of the thing</typeparam>
     public class Box<T>
     {
         public Box(T newExtract)

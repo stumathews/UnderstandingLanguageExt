@@ -8,7 +8,7 @@ namespace Tutorial01
     /// <summary>
     /// A box can hold a thing only
     /// </summary>
-    /// <typeparam name="T"></typeparam>
+    /// <typeparam name="T">The type of the thing</typeparam>
     public class Box<T>
     {
         public Box(T newItem)
@@ -37,9 +37,9 @@ namespace Tutorial01
     public static class BoxMethods
     {
         /// <summary>
-        /// Transforms the contents of a Box in a user defined way
+        /// Transforms the contents of a Box, in a user defined way
         /// </summary>
-        /// <typeparam name="TA">The tye of the thing in the box to start with</typeparam>
+        /// <typeparam name="TA">The type of the thing in the box to start with</typeparam>
         /// <typeparam name="TB">The result type that the transforming function to transform to</typeparam>
         /// <param name="box">The Box that the extension method will work on</param>
         /// <param name="map">User defined way to transform the contents of the box</param>
@@ -53,7 +53,8 @@ namespace Tutorial01
                 return new Box<TB>();
             }
             
-            // Extract the item from the Box and run the provided transform function ie run the map() function - map is the name of the transformation function the user provided.
+            // Extract the item from the Box and run the provided transform function ie run the map() function
+            // ie map is the name of the transformation function the user provided.
             TB transformedItem = map(box.Item);
 
             return new Box<TB>(transformedItem);

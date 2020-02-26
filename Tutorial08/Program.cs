@@ -24,19 +24,19 @@ namespace Tutorial08
             Portfolio[] portfoliosWithHoldings = PopulatePortfolioHoldings(portfolios, HoldingFrom);
             
             // 3. do something with these populated portfolios
-            var result = DoSoething(portfoliosWithHoldings);
+            var result = DoSomething(portfoliosWithHoldings);
 
             /* Pipline way of thinking */
 
             // Linq Fluent syntax way
             Box<Portfolio[]> result2 = GetPortfoliosByIds1(portfolioIds) // note same input, portfolioIds can be used but this is returning a box now
                 .Bind(ports => PopulatePortfolioHoldings1(ports, HoldingFrom)) // notice you can use the same name of the transformed item as the last(ports)
-                .Map(ports => DoSoething(ports).ToArray());
+                .Map(ports => DoSomething(ports).ToArray());
 
             // Linq Expression syntax way
             Box<Portfolio[]> result3 = from ports in GetPortfoliosByIds1(portfolioIds)
                                        from ports1 in PopulatePortfolioHoldings1(ports, HoldingFrom) // notice you cant use the name of last transform again
-                                        select DoSoething(ports1);
+                                        select DoSomething(ports1);
 
             
            
@@ -45,7 +45,7 @@ namespace Tutorial08
         /// <summary>
         /// Scottish for do something
         /// </summary>
-        private static Portfolio[] DoSoething(Portfolio[] portfoliosWithHoldings)
+        private static Portfolio[] DoSomething(Portfolio[] portfoliosWithHoldings)
         {
             throw new NotImplementedException();
         }

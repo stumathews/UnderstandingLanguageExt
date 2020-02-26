@@ -47,7 +47,7 @@ namespace Tutorial06
         // Perfect Map function to use with a Map as map will automatically lift this and so this function does not have to lift its result
         private static object DoSomethingWith(params int[][] varargs)
         {
-            // Note we dont have to return a Box<> because as we''ll be running within a SelectMany() it automatically lifts the result in this case a object type
+            // Note we dont have to return a Box<> because as we''ll be running within a SelectMany() - it automatically lifts the result in this case a object type
             return new object();
             // Note that this function will be acting as the bind() transformation function within the SelectMany() function defined for the Box class (see SelectMany())
         }

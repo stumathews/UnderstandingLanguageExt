@@ -25,20 +25,23 @@ namespace Tutorial04
 
 
         /// <summary>
-        /// Transform(double) the contents of a box ie get the value extracted from box using Bind and then transform(using Bind() will not automatically lift the transformed value).
+        /// Transform(double) the contents of a box ie get the value extracted from box using Bind,
+        /// and then transform(though using Bind() will not automatically lift the transformed value, so you need to do that).
         /// You'll need to lift the transformed value into a Box again
         /// </summary>
         /// <param name="boxOfIntegers"></param>
         /// <returns></returns>
         private static Box<int[]> DoubleBox1(Box<int[]> boxOfIntegers)
         {
-            // If the transformed result is already lifted, which it is as DoubleNumbers() returns a Box, use Bind to achieve the transform without a lift applied
+            // If the transformed result is already lifted, which it is as DoubleNumbers() already returns a Box,
+            // use Bind to achieve the transform without an expliciy lift into the Box being applied
             return boxOfIntegers.Bind(numbers => DoubleNumbers(numbers));
         }
 
 
         /// <summary>
-        /// Transform(double) the contents of a box ie the value extracted from it using Map, which will happily and automatically lift the transformed value ina box so you don't have to.
+        /// Transform(by doubling) the contents of a box ie. the value extracted from it using Map, 
+        /// which will happily and automatically lift the transformed value into a box so you don't have to.
         /// </summary>
         private static Box<int[]> DoubleBox2(Box<int[]> boxOfIntegers)
         {
@@ -52,7 +55,8 @@ namespace Tutorial04
         private static Box<int[]> DoubleBox3(Box<int[]> boxOfIntegers)
         {
             // We can use the SelectMany() extension method to Validate, Extract, and transform its contents.
-            // Have a look at Box's SelectMany() implementation now and realise how its being used to allow this 'double from' Linq expression construct
+            // Have a look at Box's SelectMany() implementation now
+            // and realise how its being used to allow this 'double from' Linq expression construct
 
             return 
                 from extract in boxOfIntegers
@@ -60,11 +64,13 @@ namespace Tutorial04
                 from transformed in transformedAndLifted
                          select transformed; // see internals of SelectMany function --> project(extract, transformedAndLiftedResult) as this select statement is this project() function in SelectMany implementation
 
-            /* Note: we are not using 'extract' value in this project function, just the transformed value */
+            /* Note: we are not using 'extract' value in this project function, just the transformed value
+             * we could have used in during our transformation, because usually its the subject of the transformation! */
         }
 
         /// <summary>
-        /// Like DoubleBox3 but shows that you dont have to put the same type (int[]) of item back in the box, you can put any type of item back in the box (string)
+        /// Like DoubleBox3 but shows that you dont have to put the same type (int[]) of item back in the box, 
+        /// you can put any type of item back in the box (string)
         /// </summary>
         private static Box<string> DoubleBox11(Box<int[]> boxOfIntegers)
         {

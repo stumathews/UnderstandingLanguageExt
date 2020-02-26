@@ -14,8 +14,9 @@ namespace Tutorial01
             Console.WriteLine($"The contents of my NumberBox is initially is '{myNumberBox1.Item}'");
 
             // But this Box is different. It can be used in a Linq Expression. 
-            // This is because it has a special function defined for it call Select(). Have a look at Box class again, check out the extension method at the bottom.
-            // This single function allows the following Linq usages
+            // This is because it has a special function defined for it call Select(). 
+            // Have a look at Box class again, check out the extension method at the bottom.
+            // This single function allows the following Linq usages:
             var result = from number1 in myNumberBox1
                 select number1 + 1; // This is call the Linq Expression Syntax
 

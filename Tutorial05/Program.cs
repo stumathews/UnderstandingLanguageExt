@@ -28,7 +28,8 @@ namespace Tutorial05
             var doubled4 = from extract in boxOfIntegers
                 select DoubleNumbers(extract).Extract; // Use Select via linq expression syntax
             
-            // Note we can use Map or Bind, but it becomes nessesary to use a Specific one depending on if or not the provided transformation function returns a box or not (lifts or doesn't)
+            // Note we can use Map or Bind, but it becomes nessesary to choose/use a specific one depending
+            // on if or not the provided transformation function returns a box or not (lifts or doesn't), ie is transformed in a call to Bind() or Map()
             Box<int[]> doubleDouble1 = boxOfIntegers
                 .Bind(numbers => DoubleNumbers(numbers))
                 .Map(DoubleNumbers)
