@@ -6,7 +6,7 @@ using LanguageExt.DataTypes.Serialisation;
 
 namespace Tutorial20
 {
-    // Shows the basics of Either<L,R>, using BindLeft() to make provision for a transform function forthe left types of the either.
+    // Shows the basics of Either<L,R>, using BindLeft() to make provision for a transform function for the left types of the either (which is unusual for the default Bind() function).
     // The transform is NOT automatically lifted(this is a bind() after all).
 
     class Program

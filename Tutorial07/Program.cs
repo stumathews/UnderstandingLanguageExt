@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Linq;
 
+// This shows you how to structure and deal with situations when choosing what function will be used in the bind(), map() functions and how choices you make
+// impact the subsequent invocations of those functions when pipe-lining or chaining these functions together
 namespace Tutorial07
 {
     class Program
@@ -25,18 +27,20 @@ namespace Tutorial07
                 .Bind(transformed => DoubleNumbers(transformed))
                 .Bind(transformed => DoubleNumbers(transformed))
                 .Bind(transformed => DoubleNumbers(transformed))
-                .Map(transformed => Dosomethingwith(transformed)); // note that because Dosomethingwith() doesn't return a Box, use Map to automatically do that with the result 
+                .Map(transformed => Dosomethingwith(transformed)); // note that because Dosomethingwith() doesn't return a Box, use Map to automatically do that with the result, particularly
+                                                                         // if you ant the result to be in a box becaue perhaps a nother function needs a box as a parameter
 
             // This shows that you can use either map or bind (they do the same thing ie both transform their input) but map will lift automatically 
             // and bind() needs its transform function to explicitly do that.
-            // This choice of using map or bind will impact on how the subsequent functions deal with either a lifted or a non-lifted result.
+
+            // This choice of using map or bind will impact on how the subsequent functions require either a lifted(Box<T>) or a non-lifted result.
             // So depending on what transformation function you use on the prior input, will affect how the next step deals with either
             // a lifted result or a non-lifted result
             Box<int[]> doubleDouble1 = boxOfIntegers
-                .Bind(numbers => DoubleNumbers(numbers)) // Non automatically lifted result, so DoubleNumbers will have to lift, and it has to lift becasue subsequent Map or Bind need to work from a lifted value ie a Box<>
-                .Map(DoubleNumbers) // now we have DoubleNumbers lifting the transformed value and becasue we used Map to transform it, it automatically lifts it again... so we really should have used bind() but no matter, we'll deal with it:
+                .Bind(numbers => DoubleNumbers(numbers)) // Non automatically lifted result, so DoubleNumbers will have to lift for it to be compatible with Bind(), and it has to lift because subsequent Map or Bind need to work from a lifted value ie a Box<>
+                .Map(DoubleNumbers) // now we have DoubleNumbers lifting the transformed value and becasue we used Map to transform it, it automatically lifts it again... so we really should have used bind() here but no matter, we'll deal with it:
                 .Bind(box => box.Bind( numbers => DoubleNumbers(numbers) )) // due to to the double lift, ie Box<Box<>> we first the extracted item is a Box<Box<>> which is a Box<>
-                // so to extract something form that box i need to use a map or bind, in this case I chose bind, whch additionally will not lift and i can use Bind next:
+                // so to extract something from that box that i need to use a map or bind, in this case I chose bind, which additionally will not lift and i can use Bind next:
                 .Bind(numbers => DoubleNumbers(numbers)) 
                 .Bind(numbers => DoubleNumbers(numbers));
         }

@@ -14,9 +14,10 @@ namespace Tutorial17
         {
             Either<int, string> intOrString = "start";
             
-            // A state (InitialResult) changes over time and it changes using results of the previous change. It uses an item from the array in changing the state each time.
-            // The state changes the number of elements in the either, there will only be one. the state will change once based on the one value in the either.
-            // For a Lst which has multiple items in it, the state will change that many times
+            // A state (InitialResult) changes over time and it changes using results of the previous change.... It uses an new item extracted from the array in changing the state each time.
+            // The state changes the number of elements in the either - there will only be one - Left or right type.
+            // the state will change once based on the one value in the either.
+            // For a List which has multiple items in it, the state will change that many times
             var result = intOrString.Fold("InitialState", (previousResult, extract) => changeState(extract, previousResult));
             
             // The result is the last state change

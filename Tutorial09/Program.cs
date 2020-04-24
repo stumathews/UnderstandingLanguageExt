@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 namespace Tutorial09
 {
-    // Procedural thinking -> Pipeline thinking
+    // Validation
     class Program
     {
         static void Main(string[] args)
@@ -40,19 +40,18 @@ namespace Tutorial09
                                         select DoSoething(ports1);
 
             /* Notes:
-             * When using a Monad like Box in a SelectMany statement like above, remember the implemntation of te Monads SelectMany():
+             * When using a Monad like Box in a SelectMany statement like above, remember the implementation of the Monads SelectMany():
              *  for each bind() phase of the SelectMany(), that phase requires a function such PopulatePortfolioHoldings1() and any following ones
-             *  to transform the extracted item and then put it back into a Box to thats why each function must return a Box<> in the pipeline.
-             *  Also note how the logical way of planning the steps can be replicated in both the procedural and pipeline ways (you dont have to think diffirently!)
+             *  to transform the extracted item and then put it back into a Box so thats why each function must return a Box<> in the pipeline.
+             *  Also note how the logical way of planning the steps can be replicated in both the procedural and pipeline ways (you don't have to think differently!)
              *
              */
 
-           // but wait I can make a pipeline too, right?
+           // but wait I can make a pipeline too without chaining Bind() or Map() statements too, right? Why can't I just do that:?
            
-            var result1 = DoSoething(PopulatePortfolioHoldings(GetPortfoliosByIds(portfolioIds), HoldingFrom)); // yeah but not (V)ET aka short circuit ability
+            var result1 = DoSoething(PopulatePortfolioHoldings(GetPortfoliosByIds(portfolioIds), HoldingFrom)); // yeah but not (V)ET aka short-circuit-able
             // that being said you could do it, it would mean every function would need to check for invalid data whereas in a Monad like Box,
             // that validation is built into the Select and SelectMany() implementation as thus us automatic on each usage of those function on the monad!
-           
         }
 
         /// <summary>
@@ -60,7 +59,7 @@ namespace Tutorial09
         /// </summary>
         private static Portfolio[] DoSoething(Portfolio[] portfoliosWithHoldings)
         {
-            throw new NotImplementedException();
+            return portfoliosWithHoldings;
         }
 
         private static Portfolio[] PopulatePortfolioHoldings(Portfolio[] portfolios, DateTime holdingFrom)

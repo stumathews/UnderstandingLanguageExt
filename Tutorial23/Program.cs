@@ -22,7 +22,7 @@ namespace Tutorial23
             IEnumerable<Either<int, string>> listOfEithers = new Either<int, string>[] { intOrString1, intOrString2, intOrString3, intOrString4, intOrString5 };
 
             // transform the right values (if they are there) for each either in the list
-            // As this is a bind, you need to lisft the result in to a Either
+            // As this is a bind, you need to lift the result in to a Either
             var transformedList = listOfEithers.BindT(rightString => TransformRight(rightString));
 
             Either<int, string> TransformRight(string rightString)
@@ -32,7 +32,7 @@ namespace Tutorial23
             }
 
             var newRights = transformedList.Rights(); /* note we dont care care about the lefts, 
-            if we did we migth you match to see what both left and right values would be if they are set on the eithers we are looking at - see Tutorial 22 */
+            if we did we might you match to see what both left and right values would be if they are set on the eithers we are looking at - see Tutorial 22 */
             foreach (var str in newRights)
             {
                 Console.WriteLine(str);

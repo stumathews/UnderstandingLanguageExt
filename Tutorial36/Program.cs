@@ -10,7 +10,7 @@ using LanguageExt.DataTypes.Serialisation;
 
 namespace Tutorial36
 {
-    // We can convert a 'failed' standard lusid function signature to a None. This is helpful if you want to turn a failure into a 'valid' standard lusid either but with None Right value
+    // We can convert a 'failed' standard wrapped function to a None. This is helpful if you want to turn a failure into a 'valid' standard function either but with None Right value
     class Program
     {
         static void Main(string[] args)

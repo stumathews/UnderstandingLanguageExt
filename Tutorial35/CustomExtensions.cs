@@ -9,7 +9,6 @@ namespace Tutorial35
     // Note a 'Successful' either is in the Right state while a 'unsucessful' either is in Left state
     public static class EitherExtensions
     {
-       
         /// <summary>
         /// Throws an exception if the either is in left state ie failed
         /// </summary>

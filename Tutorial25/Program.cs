@@ -8,7 +8,7 @@ using LanguageExt.DataTypes.Serialisation;
 
 namespace Tutorial25
 {
-    //  Using Apply both on a simple Either<> and a List of Eithers to demonstate its simplicity
+    //  Using Apply both on a simple Either<> and a List of Eithers to demonstrates its simplicity
 
     class Program
     {
@@ -20,11 +20,11 @@ namespace Tutorial25
             Either<int, string> intOrString4 = "Bruce";
             Either<int, string> intOrString5 = 66;
 
-            // basically pass yourself ie your current value to the function provided.
-            var resultA =  intOrString5.Apply(datas => UseThis(datas));
+            // basically pass yourself ie your current value to the function provided. Ie apply allows you to transform yourself (makes a copy of the result, not an in-place modification)
+            var resultA =  intOrString5.Apply(me => UseThis(me));
 
             // the function can transform the type of the either
-            var resultB = intOrString5.Apply(datas => UseThisAndChangeType(datas));
+            var resultB = intOrString5.Apply(me => UseThisAndChangeType(me));
 
             Console.WriteLine($"ResultA = {resultA}, ResultB = {resultB}");
 
@@ -55,6 +55,5 @@ namespace Tutorial25
                 return useMe.BiMapT(rightString => rightString, leftInteger => leftInteger * 2);
             }
         }
-        
     }      
 }

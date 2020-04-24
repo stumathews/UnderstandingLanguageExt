@@ -21,8 +21,8 @@ namespace Tutorial16
 
             // like BiBind() allows you to provide both transform functions and the correct transform will run depending on is it is a right or left type contained within it - you can do something similar here.
             // BiExists allows you to test/use/inspect the content and return true/false based on it.
-            // BiExists can be viewed as a the 'existance' of a validation check being successful
-            var isEitherGreaterThanNothing = amount.BiExists(stringRight => stringRight.Length > 0 ? true: false, integerleft => integerleft > 0 ? true : false);
+            // BiExists can be viewed as a the 'existance' of a provided validation check being successful, specific to each type left or right
+            bool isEitherGreaterThanNothing = amount.BiExists(stringRight => stringRight.Length > 0 ? true: false, integerleft => integerleft > 0 ? true : false);
 
             Console.WriteLine($"The result value is {isEitherGreaterThanNothing}");
         }

@@ -15,19 +15,25 @@ namespace Tutorial30
         {
             
             var resultB = DivideBy1(225, 5);
-
             var result2 = Add5ToIt(resultB);
 
             // Now we can continue with the knowledge that result2 as 5 added to it or not (and everyone else will do that too:)
 
             var result = PerformPensionCalculations(result2);
 
-            if (result.IsNone)
-            {
-                Console.WriteLine($"Could not determine your pension, because invalid input was used");
-            }
+            if (result.IsNone) 
+                theBadMessage();
 
-            if (result.IsSome)
+            if (result.IsSome) 
+                theGoodMessage();
+
+            // of we could use a BiIter without any conditionals above (if statements)
+
+            result.BiIter(i => theGoodMessage(), ()=> theBadMessage());
+
+            void theBadMessage() => Console.WriteLine($"Could not determine your pension, because invalid input was used");
+
+            void theGoodMessage()
             {
                 var pension = result.Match(Some: i => i, None: 0);
                 Console.WriteLine($"Your pension is '{pension}'");

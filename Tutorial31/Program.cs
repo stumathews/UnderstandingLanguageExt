@@ -6,9 +6,9 @@ using System.Security.Cryptography.X509Certificates;
 using LanguageExt;
 using LanguageExt.DataTypes.Serialisation;
 
+// Demonstrates the usage of IfNone and IfSome which runs a user defined function provided the option is None or Some respectively
 namespace Tutorial31
 {
-
     class Program
     {
         static void Main(string[] args)
@@ -18,7 +18,7 @@ namespace Tutorial31
 
             var result2 = Add5ToIt(resultB);
 
-            // Now we can continue with the knowledge that result2 as 5 added to it or not (and everyone else will do that too:)
+            // Now we can continue with the knowledge that result2 as 5 added to it or not (and everyone else can do that too...)
 
             var result = PerformPensionCalculations(result2);
 

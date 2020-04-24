@@ -9,7 +9,7 @@ using LanguageExt.DataTypes.Serialisation;
 
 namespace Tutorial32
 {
-    // Rosetta code!
+    // Rosetta code! Procedural -> Fluent -> Query Syntax
     class Program
     {
         static void Main(string[] args)
@@ -28,9 +28,9 @@ namespace Tutorial32
 
             // Expression way 
             Option<int> result2 = from input1 in DivideBy1(startingAmount, 5)
-                from input2 in Add5ToIt1(input1)
-                from input3 in PerformPensionCalculations1(input2)
-                select input3;
+                                  from input2 in Add5ToIt1(input1)
+                                  from input3 in PerformPensionCalculations1(input2)
+                                    select input3;
 
             // Oh Wow, we've really simplified the code, its smaller, all the steps are functions and we are happy
             // Passing and sending Monads have helped us create step-by-step logical means to execute code entirely from functions!

@@ -9,7 +9,7 @@ using LanguageExt.DataTypes.Serialisation;
 
 namespace Tutorial33
 {
-    // ToEither
+    // ToEither extension method to convert a value to a right sided Either<L,R>
     class Program
     {
         static void Main(string[] args)

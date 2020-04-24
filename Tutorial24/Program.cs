@@ -6,7 +6,7 @@ using LanguageExt.DataTypes.Serialisation;
 
 namespace Tutorial24
 {
-    // This tutorial shows you how you can call a function on each right value for the list of monads in the list, using IterT()
+    // This tutorial shows you how you can call a function on each right value for the list of monads in the list, using IterT() (Either is a monad)
     
     class Program
     {
@@ -22,6 +22,7 @@ namespace Tutorial24
 
             // Extract right values from the eithers in the list and run this function to get them.
             // note if there is no right value for the either being inspected, this function is not run
+            // ie skips 66
             listOfEithers.IterT(rightString => Console.WriteLine($"{rightString}"));
         }
         

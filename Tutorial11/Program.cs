@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 namespace Tutorial11
 {
-    // This tutorial shows how pipelining and the way Box's Map() and Bind() functions work, allow for short-circuiting through the validation step in (VETL - Validate, Extract, Transform and Lift)
+    // This tutorial shows how pipe-lining and the way Box's Map() and Bind() functions work, allow for short-circuiting through the validation step in (VETL - Validate, Extract, Transform and Lift)
     // and hows why this is useful.
+    // More specifically it shows how short-circuiting works when you use the Linq Query syntax, and how the underlying implementation of Select() and SelectMany()'s validation 
+    // routines are still used
     class Program
     {
         static void Main(string[] args)
@@ -17,7 +19,7 @@ namespace Tutorial11
             // Further more we cannot process any boxes if even one box is empty:
 
             var result = from number1 in aBoxOfNumbers1
-                    from number2 in aBoxOfNumbers2 // this result causes the next Bind() to check see that its an invalid input and itself returns empty box and this repeats until the result is deemped empty
+                    from number2 in aBoxOfNumbers2 // this result causes the next Bind() to check see that its an invalid input and itself returns empty box and this repeats until the result is deemed empty
                     from number3 in aBoxOfNumbers3 // this does run, but it just bails out at the Validation phase in the bind()'s VETL stage
                     select number3;
 

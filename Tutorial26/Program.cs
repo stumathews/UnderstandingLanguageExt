@@ -21,7 +21,7 @@ namespace Tutorial26
 
             IEnumerable<Either<int, string>> listOfEithers = new Either<int, string>[] { intOrString1, intOrString2, intOrString3, intOrString4, intOrString5 };
             
-            // instead of callin Lefts() and Rights(), you can get them all in one go as a tuple
+            // instead of calling Lefts() and Rights(), you can get them all in one go as a tuple
             var (lefts, rights) = listOfEithers.Partition();
 
             foreach(var left in lefts)

@@ -6,7 +6,7 @@ using LanguageExt.DataTypes.Serialisation;
 
 namespace Tutorial18
 {
-    //  Iter: run an arbitary function on the either if its value is right type or BiIter() to specify a function to run on both types 
+    //  Iter: run an arbitary function on the Either<> if its value is right type or chose BiIter() to specify a function to run on both types 
 
     class Program
     {
@@ -18,7 +18,7 @@ namespace Tutorial18
             bool didFunctionRunForLeft = false;
 
             // extracts the right content and if it is right, it run this non-transforming ie void returning function on it. The function wont  run it its as left type
-            intOrString.Iter(rightString => RunAFunctionOnRightContents(rightString));
+            intOrString.Iter(rightString => RunAFunctionOnRightContents(rightString)); // So only runs the function if its right type
 
             // both actions are void returning (Unit represents a typed void result)
             Unit ret = intOrString.BiIter(rightString => RunAFunctionOnRightContents(rightString), leftInteger => didFunctionRunForLeft = true);

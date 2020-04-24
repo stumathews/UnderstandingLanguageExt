@@ -2,9 +2,9 @@
 using System.Linq;
 
 /*
- This tutorial shows you how pipelining is used to call funtions.
+ This tutorial shows you how pipelining/chaining/cascading is used to call functions.
  This tutorial shows how to use the Linq Fluent and Expression syntax to achieve the same thing
- This also demonstrates 'Perfect' map and bind function and show when to use map and bind and why
+ This also demonstrates what is a Perfect or valid map and bind function and show when to use map and bind and why
 */
 namespace Tutorial06
 {
@@ -18,15 +18,14 @@ namespace Tutorial06
 
             // Do something with or to the Box
 
-           
             /* Shown: Using the select many way, ie the linq expression syntax as shown below allows an extracted item from the box, then to be
              * passed down a series of transforms by way of those transform functions being compatible with the bind() phase of the SelectMany() function.
              
             Each can see the prior transformation and can act on it subsequently.
 
              And as each transformation function is run as part of the SelectMany() implementation of Box, it will also be subject to the VETL phases
-             which means if the input is not valid, it will will return a invalid value and subsequent transforms upon recieving that invalid input will also 
-             return an invalid input and in all those cases i doing that the underlying transform is not run.             
+             which means if the input is not valid, it will  return a invalid value and subsequent transforms upon receiving that invalid input will also 
+             return an invalid input and in all those cases i doing that the underlying transform is not run (short-circuiting).             
              */
             Box<object> doubled1 = from extract in boxOfIntegers // extract items out
                 from transformed in DoubleNumbers(extract) // bind() part of SelectMany() ie transform extracted value (and below):
@@ -44,10 +43,10 @@ namespace Tutorial06
                       
         }
 
-        // Perfect Map function to use with a Map as map will automatically lift this and so this function does not have to lift its result
+        // Perfect/valid Map function to use with a Map, as map will automatically lift this and so this function does not have to lift its result
         private static object DoSomethingWith(params int[][] varargs)
         {
-            // Note we dont have to return a Box<> because as we''ll be running within a SelectMany() - it automatically lifts the result in this case a object type
+            // Note we dont have to return a Box<> because as we''ll be running within a SelectMany() expression - it automatically lifts the result in this case a object type
             return new object();
             // Note that this function will be acting as the bind() transformation function within the SelectMany() function defined for the Box class (see SelectMany())
         }

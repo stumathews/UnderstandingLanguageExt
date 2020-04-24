@@ -11,9 +11,7 @@ using LanguageExt.DataTypes.Serialisation;
 
 namespace Tutorial37
 {
-    // This tutorial exposes how functional programming, particularly caching results from pure functions as they always return the same output for same input.
-    // coupled with returning monads, you can ensure that you communicate both failure and success in returned values and thus are likely to to have repeatable functions which
-    // have consistantly returned data. (either good value or bad value)
+    // This tutorial exposes how functional programming, particularly caching results from pure functions, aids memoization, as they always return the same output for same input.
     class Program
     {
         static void Main(string[] args)
@@ -55,7 +53,7 @@ namespace Tutorial37
             
             // Now because we've cached decrypted results for phrases, when we see that encrypted phrase we can use the cached decrypted result for that encrypted phrase to get 
             // without having to run the SimpleDecrypt() function again. This is the same with all caching mechanism, which make the obvious seem transparent, however with a pure function, you know for certain that 
-            // there is no chance that our cached decrypted result could be diffirent from running a SimpleDecrypt() on the encrypted string we have - so we have double certainty that we
+            // there is no chance that our cached decrypted result could be different from running a SimpleDecrypt() on the encrypted string we have - so we have double certainty that we
             // dont have to run the SimpleDecrypt() function. If SimpleEncrypt() or SimpleDecrypt() could sometimes return different outputs for the same input, then we'd have to cal SimpleDecrypt()
             // to return what the decrypted result is that/this time.
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 namespace Tutorial08
 {
-    // Procedural thinking -> Pipeline thinking
+    // Shows show to convert a Procedural wa of thinking -> Pipeline thinking
     class Program
     {
         static void Main(string[] args)
@@ -37,25 +37,25 @@ namespace Tutorial08
             Box<Portfolio[]> result3 = from ports in GetPortfoliosByIds1(portfolioIds)
                                        from ports1 in PopulatePortfolioHoldings1(ports, HoldingFrom) // notice you cant use the name of last transform again
                                         select DoSomething(ports1);
-
-            
-           
         }
 
         /// <summary>
-        /// Scottish for do something
+        /// do something
         /// </summary>
         private static Portfolio[] DoSomething(Portfolio[] portfoliosWithHoldings)
         {
-            throw new NotImplementedException();
+            return portfoliosWithHoldings.Select(p =>
+            {
+                p.Name = p.Name.ToUpper();
+                return p;
+            }).ToArray();
         }
 
         private static Portfolio[] PopulatePortfolioHoldings(Portfolio[] portfolios, DateTime holdingFrom)
         {
-            foreach( var portfolio in portfolios)
-            {
+            foreach( var portfolio in portfolios) 
                 portfolio.Holdings = GetPortfolioHoldingsFrom(portfolio, holdingFrom);
-            }
+
             return portfolios;
         }
 
@@ -64,7 +64,11 @@ namespace Tutorial08
         /// </summary>
         private static Box<Portfolio[]> PopulatePortfolioHoldings1(Portfolio[] portfolios, DateTime holdingFrom)
         {
-            var listOfPortfolios = PopulatePortfolioHoldings(portfolios, holdingFrom);
+            var listOfPortfolios = portfolios.Select(p=>
+            {
+                p.Holdings = GetPortfolioHoldingsFrom(p, holdingFrom);
+                return p;
+            }).ToArray();
             return new Box<Portfolio[]>(listOfPortfolios);                    
         }
 

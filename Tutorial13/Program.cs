@@ -10,6 +10,7 @@ namespace Tutorial13
     // for instance, if you get a value from the DB today, tomorrow it might be removed and then the guarantee you made that the function will return the same value breaks.
     // So you can't use Input/Output as that is the source of changeable circumstances.
     
+    // Side note: Pure functions are immediately parallelizable and can be used for Memoization (storing the result and input of the function requires that the function never needs to run again)
     class Program
     {
         static void Main(string[] args)
@@ -17,17 +18,15 @@ namespace Tutorial13
 
            Box<int[]> aBoxOfNumbers = new Box<int[]>(new int[]{ 1, 2, 3, 4, 5, 6, 7});
 
-           // Non method group notation of a lambda
-           var result = aBoxOfNumbers.Map(numbers => GenerateFibonacciSeriesFrom(numbers));
-
-           // Method group notation of a lambda
-           var result2 = aBoxOfNumbers.Map(ImpureGenerateFibonacciSeries);
+           var result = aBoxOfNumbers.Map(numbers => GenerateFibonacciSeriesFrom(numbers)); // note non-method group notation(not important)
+           var result2 = aBoxOfNumbers.Map(ImpureGenerateFibonacciSeries); // not method group notation(not important)
 
             Console.WriteLine($"fibos are {string.Join(',', result.Extract)} and are gaurenteed to be this provided the same input is used");
             Console.WriteLine($"fibos generated from impure function are {string.Join(',', result2.Extract)} is not to be this always.");
 
             // Pure function only uses its input to generate its result and doesn't depend/get/fetch data from anywhere else that might impact the result. 
             // It certainly does not depend on things like I/O and db calls that might not bring the same result on subsequent calls of the function
+            // and it does not throw exceptions(later tutorial show how to remove exceptions from your code using Either<IFailure, Result>). 
             int[] GenerateFibonacciSeriesFrom(int[] numbers)
            {
                var fibs = new List<int>(numbers.Length);
@@ -71,8 +70,6 @@ namespace Tutorial13
 
                 return fibs.ToArray();
             }
-
         }
-        
     }      
 }

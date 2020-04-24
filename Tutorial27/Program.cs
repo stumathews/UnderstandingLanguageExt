@@ -10,7 +10,7 @@ namespace Tutorial27
 {
     // Shows the basics of transforming a list of Eithers using match to understand whats in them (both left and right values) and
     // then transform them based on their values into a single type that represents either in one way (a string)
-
+    // Along with Map() and Bind() this extracts the value from the Either and provides transformation functions for both Left and Right sides of the Either
     class Program
     {
         static void Main(string[] args)
@@ -25,9 +25,10 @@ namespace Tutorial27
             IEnumerable<Either<int, string>> listOfEithers = new Either<int, string>[] { intOrString1, intOrString2, intOrString3, intOrString4, intOrString5, intOrString6, };
 
             // Go through each of the Eithers and depending on their types and their content, transform them
-            // and we can reprsent values from either type, string or int as one uniform type, in this case we can represent a left and a right as a string and
+            // and we can represent values from either type, string or int as one uniform type, in this case we can represent a left and a right as a string and
             // thus return the set of all these representation as a list of strings
-            
+            // Note that in order to assign the result of a match, both sides' transformation function needs to return the same type, particularly the type of the receiving variable
+
             var result = listOfEithers.Match(Right:  MakeGenderAwareString, Left: MakeOneHundredAwareString);
 
             foreach (var transform in result)

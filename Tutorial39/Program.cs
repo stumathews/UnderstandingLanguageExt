@@ -10,9 +10,9 @@ using LanguageExt.DataTypes.Serialisation;
 
 namespace Tutorial39
 {
-    // This tutorial demonstrates creating immutable objects, and using them as you would use any other OOP objects.
+    // This tutorial demonstrates creating immutable objects using Smart Constructors, and using them as you would use any other OOP objects.
     // However, this object is immutable in as much as its specifically designed not to have its state changed by operations
-    // The operations that it does have, create a new object with the modification and leaves the origninal object untouched.
+    // The operations that it does have, create a new object with the modification and leaves the original object untouched.
     class Program
     {
         static void Main(string[] args)
@@ -24,14 +24,14 @@ namespace Tutorial39
             var originalMe = Person.Of("Steward", "Mathews");
             
 
-            // Perform a state change on the person, hwever we enforce creation of a new copy of person, preinitialized with previous data. 
+            // Perform a state change on the person, however we enforce creation of a new copy of person, pre-initialized with previous data. 
             // We therefore don't modify state - particularly of the person that we are about to modify - this is not a member function that changes te object as is traditionally done
             var changedMe = originalMe.Bind(person => person.Rename("Steward Rob Charles", "Mathews")); // Remember we're binidng here as Rename returns a Monad already if it didn't we'd use Map()
 
-            // We can do this declararatively also
+            // We can do this declaratively also
             var stateChangedMe1 = from person in originalMe
-                                  from renamedperson in person.Rename("Steward Rob Charles", "Mathews")
-                                  select renamedperson;
+                                              from renamedperson in person.Rename("Steward Rob Charles", "Mathews")
+                                              select renamedperson;
 
             // We can also chain the modifications using the extension method
 

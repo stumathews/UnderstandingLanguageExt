@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 namespace Tutorial10
 {
-    // Procedural thinking -> Pipeline thinking
+    // You can chain multiple Bind/Map() functions
     class Program
     {
         static void Main(string[] args)
@@ -17,23 +17,23 @@ namespace Tutorial10
             
             // Notice how the result of the Bind or map always returns a Box<>             
             Box<Portfolio[]> pipelineResult1 = new Box<Portfolio[]>(GetPortfoliosByIds(portfolioIds))
-                .Bind(ports =>                 new Box<Portfolio[]>(PopulatePortfolioHoldings(ports, HoldingFrom))) // Notice how bind must return a box during transformation
-                .Map(ports => DoSoething(ports).ToArray()); // note how map doesn't require the transfomming funtion to return a Box<>, it will so do automatically
+                .Bind(ports => new Box<Portfolio[]>(PopulatePortfolioHoldings(ports, HoldingFrom))) // Notice how bind must return a box during transformation
+                .Map(ports => DoSoething(ports).ToArray()); // note how map doesn't require the transforming function to return a Box<>, it will so do automatically
             
             Box<Portfolio[]> pipelineResult2 = from ports in  new Box<Portfolio[]>(GetPortfoliosByIds(portfolioIds))
                                                from ports1 in new Box<Portfolio[]>(PopulatePortfolioHoldings(ports, HoldingFrom)) // this transforms the extracted item form Box, Portfolio[] and puts back into box
-                                        select DoSoething(ports1);     // This is a select() so it will automatically lift to a Box<>
+                                        select DoSoething(ports1);     // This is a projection() run via the Select() function within Bind() SelectMany() implementation, so it will automatically lift to a Box<>. Switch to Box class to see
         }
 
         /* Some interesting observations:
          * Map and Bind both extract and validate the item within the box (that it's not empty) ie do VETL and then proceeds to run the transform function on it if its not empty, otherwise returns empty box.
-         * Map and Both are equivalent in as much as they perform VETL but differ in what form they require their transform function to either lift or not lift the transformation
+         * Map and Both are equivalent in as much as they perform VETL but differ in what form they require their transform function to either lift or not lift the transformation (the function proptypes must match what a Map ot Bind() function requires)
          * In the Linq Syntax query method, Box's SelectMany() is used to transform successive transformations.
-         * You have access to each of the transformed results in subsequent transformations below. 
-         * The final select statement is the Box's Select() function and therefor it will automatically be lifted and you dont need to do it.
+         * You have access to each of the transformed results in subsequent transformations below(scope)
+         * The final select statement is run via the Box's Select() function (technically this is the projection() function) and therefor it will automatically be lifted and you dont need to do it.
          * The Fluent mechanism, used Box's Map and Bind functions. 
-         * Each Map and Bind has access to the last transformation before it, and unlike the linq expression syntax cannot see beyond the last transformation (as that is the input it gets)
-         * transformations from a call to Bind and Map must result in a Box<> either explicitly via Bind() or automatically via Map()
+         * Each fluent style Map and Bind has access to the last transformation before it, and unlike the linq expression syntax cannot see beyond the last transformation (as that is the input it gets)
+         * Transformations from a call to Bind and Map must result in a Box<> either explicitly via Bind() or automatically via Map()
          * Your logical planning or thinking of logical programming tasks in your design can equally be represented procedurally and using pipelining.
          */
         

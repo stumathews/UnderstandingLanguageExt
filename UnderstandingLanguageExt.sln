@@ -80,11 +80,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial35 - ThrowIfFailed(
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial36 - FailureToNone", "Tutorial36\Tutorial36 - FailureToNone.csproj", "{CF7D4818-DE7A-4199-ABF2-48425EB52206}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial37 - Caching", "Tutorial37\Tutorial37 - Caching.csproj", "{249615C3-3D1E-4444-BDDE-0F1A15A7BF8E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial37 - Caching and Memoization", "Tutorial37\Tutorial37 - Caching and Memoization.csproj", "{249615C3-3D1E-4444-BDDE-0F1A15A7BF8E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial38 - Changing state over time", "Tutorial38\Tutorial38 - Changing state over time.csproj", "{72F3837C-D92E-4068-9F01-7E0CE13E93AB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial39 - Immutability", "Tutorial39\Tutorial39 - Immutability.csproj", "{68CE0384-FBA3-411A-9C4C-78D4399E8CAF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial39 - Immutability - Smart Constructors", "Tutorial39\Tutorial39 - Immutability - Smart Constructors.csproj", "{68CE0384-FBA3-411A-9C4C-78D4399E8CAF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

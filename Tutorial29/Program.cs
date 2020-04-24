@@ -67,10 +67,11 @@ namespace Tutorial29
 
         static Option<int> Add5ToIt(Option<int> input)
         {
-           // I can assume thats its valid, becasue bind will run a tranformation function on the valid input
+           // I can assume that its valid, because Map will run a transformation function on the valid input
            Option<int> t = input.Map(validInput => validInput + 5); // if its invalid the Validation phase of the map() function will return a None ie an invalid input and so the
            
-           // the result of the Map will be an option<T> will a None or invalid input in it. Remember a Map always returns a Monad, in this case Option<T> and it automatically lifts it for you
+           // the result of the Map will be an option<T> of None or invalid input in it.
+           // Remember a Map always returns a Monad, in this case Option<T> and it automatically lifts it for you by Map()
            return t;
         }
     }      
