@@ -5,6 +5,7 @@ using System.Reflection.PortableExecutable;
 using System.Runtime.InteropServices.ComTypes;
 using System.Threading.Tasks.Dataflow;
 
+// This box has not changed its meaning since the last tutorial
 namespace Tutorial01
 {
     /// <summary>

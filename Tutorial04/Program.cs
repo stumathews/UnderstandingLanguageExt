@@ -7,7 +7,7 @@ using Tutorial01;
 namespace Tutorial04
 {
     /// <summary>
-    /// Performing operations on a Box using Map() and Bind(), Select and introducing the SelectMany() extension method on Box
+    /// Performing operations on a Box using Map() and Bind() via Select and introducing the SelectMany() extension method on Box
     /// </summary>
     class Program
     {
@@ -34,10 +34,19 @@ namespace Tutorial04
         private static Box<int[]> DoubleBox1(Box<int[]> boxOfIntegers)
         {
             // If the transformed result is already lifted, which it is as DoubleNumbers() already returns a Box,
-            // use Bind to achieve the transform without an expliciy lift into the Box being applied
+            // use Bind to achieve the transform without an explicitly lift into the Box being applied
             return boxOfIntegers.Bind(numbers => DoubleNumbers(numbers));
         }
 
+        // transform Extracted, and Lift it
+        static Box<int[]> DoubleNumbers(int[] extract)
+        {
+            // Remember a Select() run a function on the item in the box
+            // Also note that the Select() function here is provided by the .NET runtime and it not the Select() we
+            // wrote for the Box type, as extract is of type int[].
+            // This version of select behaves similarly to what the Box's Select does - we just can't see it (it runs the user provided transform function)
+            return new Box<int[]>(extract.Select(x => x * 2).ToArray());
+        }
 
         /// <summary>
         /// Transform(by doubling) the contents of a box ie. the value extracted from it using Map, 
@@ -56,7 +65,8 @@ namespace Tutorial04
         {
             // We can use the SelectMany() extension method to Validate, Extract, and transform its contents.
             // Have a look at Box's SelectMany() implementation now
-            // and realise how its being used to allow this 'double from' Linq expression construct
+            // and realize that its this that is used to allow this 'double from from' Linq expression construct, that you see from time to time in
+            // peoples code
 
             return 
                 from extract in boxOfIntegers
@@ -64,8 +74,8 @@ namespace Tutorial04
                 from transformed in transformedAndLifted
                          select transformed; // see internals of SelectMany function --> project(extract, transformedAndLiftedResult) as this select statement is this project() function in SelectMany implementation
 
-            /* Note: we are not using 'extract' value in this project function, just the transformed value
-             * we could have used in during our transformation, because usually its the subject of the transformation! */
+            /* Note: we are not using 'extract' value in this project function (the final select), just the transformed value
+             * we could have used in during our transformation, because it in scope and is accessible to be included */
         }
 
         /// <summary>
@@ -87,25 +97,19 @@ namespace Tutorial04
         }
 
         /// <summary>
-        /// Shows how Select is like Map
+        /// Shows how our Select() is called in a linq expression using from
         /// </summary>
         /// <param name="boxOfIntegers"></param>
         /// <returns></returns>
         private static Box<int[]> DoubleBox4(Box<int[]> boxOfIntegers)
         {
-            Box<Box<int[]>> t = from extract in boxOfIntegers  
-                select DoubleNumbers(extract); // Remember a Select does a automatic lift
+            Box<int[]> t  = from extract in boxOfIntegers  
+                                     select DoubleNumbersNoLift(extract); // Remember Select() does the lift!
 
-            return t.Item;
+            return t;
         }
 
-
-        // transform Extracted, and Lift it
-        static Box<int[]> DoubleNumbers(int[] extract)
-        {
-            return new Box<int[]>(extract.Select(x => x * 2).ToArray());
-        }
-
+        // As this does not return a Monad, it can be used as a transformation function, that is passed to Map()
         static int[] DoubleNumbersNoLift(int[] extract)
         {
             return extract.Select(x => x * 2).ToArray();

@@ -72,7 +72,7 @@ namespace Tutorial01
             //Extract 
             TA extract = box.Item;
 
-            // Transform and the user-defined function
+            // Transform and the user-defined function (notice that its up to the user defined function to 'lift' any result of the transformation into a new Box)
             Box<TB> transformedAndLifted = bind(extract); //  should return its results of its transformation in a Box 
 
             return transformedAndLifted;

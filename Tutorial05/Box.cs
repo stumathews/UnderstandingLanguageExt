@@ -5,6 +5,7 @@ using System.Reflection.PortableExecutable;
 using System.Runtime.InteropServices.ComTypes;
 using System.Threading.Tasks.Dataflow;
 
+// Box<T> has not changed since last tutorial
 namespace Tutorial05
 {
     /// <summary>
