@@ -26,7 +26,7 @@ Bonus: Functional programming concepts
 * Changing object state over time
 * Immutability
 
-Note: To run any specific tutorial, right-click on the project in the solution explorer and 'Set as start-up project'
+__Note: To run any specific tutorial, right-click on the project in the solution explorer and 'Set as start-up project'__
 
 # The Basics
 * Tutorial01 - Introduction to the Box type (a Monad)
