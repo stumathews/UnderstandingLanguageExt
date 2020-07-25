@@ -70,10 +70,10 @@ __Note: To run any specific tutorial, right-click on the project in the solution
 # Custom Specific 
 * Tutorial35 - Using custom extension method ThrowIfFailed() and introducing Either<IAmFailure, Option<T>> as a standard return type for all functions
 * Tutorial36 - Using custom extension method FailureToNone()
-# Bonus: Functional programming concepts 
-* Tutorial37 - Using pure functions to cache things, ensuring that you need not call expensive calls if they've been done once already.
-* Tutorial38 - Changing state of an object over time (Fold) including concept of apply events over time to change an object
-* Tutorial39 - Immutability - Designing your objects with immutability in mind: Smart constructors and Immutable data-types
+* Tutorial37 - Using pure functions to cache things, ensuring that you need not call expensive calls if they've been done once already. (Bonus: FP concepts)
+* Tutorial38 - Changing state of an object over time (Fold) including concept of apply events over time to change an object (Bonus: FP concepts)
+* Tutorial39 - Immutability - Designing your objects with immutability in mind: Smart constructors and Immutable data-types (Bonus: FP concepts)
+* Tutorial40 - Try - Supressing Exceptions
 # Todo
 * TutorialA - Partial Functions - Allowing multiple arguments to be 'baked' in and still appear as Math like functions (pure functions)
 * TutorialB - Threading and parallelism benfits
