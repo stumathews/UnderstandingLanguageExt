@@ -3,7 +3,7 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <FileUpgradeFlags>40</FileUpgradeFlags>
-    <UpgradeBackupLocation>C:\Users\Stuart\git\LanguageExtForNewDevelopers\Backup\Tutorial0\</UpgradeBackupLocation>
+    <UpgradeBackupLocation>C:\Users\Stuart\git\LanguageExtForNewDevelopers\Backup\Tutorial0 - monad</UpgradeBackupLocation>
     <OldToolsVersion>2.0</OldToolsVersion>
   </PropertyGroup>
 </Project>
