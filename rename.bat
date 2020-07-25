@@ -1,3 +1,5 @@
+REM See original at: https://stackoverflow.com/questions/52067917/how-to-replace-all-spaces-by-underscores-in-all-file-and-folder-names-recursivel
+
 @echo off
 setlocal EnableExtensions DisableDelayedExpansion
 set "StartFolder=C:\Users\cex\source\repos\UnderstandingLanguageExt"
