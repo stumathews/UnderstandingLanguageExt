@@ -1,3 +1,70 @@
+---
+generator: pandoc
+title: The Language Ext Tutorial
+viewport: 'width=device-width, initial-scale=1.0, user-scalable=yes'
+---
+
+Understanding Language Ext
+
+by Stuart Mathews
+
+-   [Part I: Monads](#part-i-monads)
+    -   [Introduction](#introduction)
+        -   [Introduction to the Box type (a
+            Monad)](#introduction-to-the-box-type-a-monad)
+        -   [Understanding Map and Bind](#understanding-map-and-bind)
+        -   [Pipelining transformation
+            workloads (3)](#pipelining-transformation-workloads-3)
+        -   [Monadic functions: Complete
+            example (4)](#monadic-functions-complete-example-4)
+        -   [Using LINQ Fluent and Expression
+            syntax (6)](#using-linq-fluent-and-expression-syntax-6)
+        -   [When to use *Map()* or
+            *Bind()* (7)](#when-to-use-map-or-bind-7)
+        -   [Transitioning from Imperative to Declarative
+            style (8)](#transitioning-from-imperative-to-declarative-style-8)
+        -   [Monad validation (9)](#monad-validation-9)
+        -   [Returning Monads: transformations always return a
+            Monad (10)](#returning-monads-transformations-always-return-a-monad-10)
+        -   [Built-in validation and short-circuiting in
+            Monads (11)](#built-in-validation-and-short-circuiting-in-monads-11)
+        -   [A diversion: composition of
+            functions (12)](#a-diversion-composition-of-functions-12)
+        -   [A diversion: Pure
+            Functions (13)](#a-diversion-pure-functions-13)
+-   [Part II: Language-Ext](#part-ii-language-ext)
+    -   [The Either\<L,R\> Monad](#the-eitherlr-monad)
+        -   [Introducing the Either
+            monad (14)](#introducing-the-either-monad-14)
+        -   [Operations on Either\<L,R\>](#operations-on-eitherlr)
+        -   [Operating on Lists of Either\<left,
+            Right\>](#operating-on-lists-of-eitherleft-right)
+    -   [The Option\<T\> Monad](#the-optiont-monad)
+        -   [Introduction to
+            Option\<T\> (28)](#introduction-to-optiont-28)
+        -   [Basic use-case of
+            Option\<T\> (29)](#basic-use-case-of-optiont-29)
+        -   [Using Option\<T\> in functions (passing in and
+            returning)](#using-optiont-in-functions-passing-in-and-returning)
+        -   [using IfSome() and IfNone()](#using-ifsome-and-ifnone)
+        -   [Pipelining with
+            Options\<T\> (32)](#pipelining-with-optionst-32)
+        -   [Using ToEither\<\>](#using-toeither)
+        -   [Using BiMap() (34)](#using-bimap-34)
+    -   [The Try\<T\> Monad](#the-tryt-monad)
+        -   [Supressing Exceptions](#supressing-exceptions)
+-   [Part III: Everything else](#part-iii-everything-else)
+    -   [Bonus](#bonus)
+        -   [ThrowIfFailed() and introducing Either\<IAmFailure,
+            Option\<T\>\>](#throwiffailed-and-introducing-eitheriamfailure-optiont)
+        -   [Using custom extension method
+            FailureToNone()](#using-custom-extension-method-failuretonone)
+        -   [Memoization](#memoization)
+        -   [Apply events over time to change an
+            object](#apply-events-over-time-to-change-an-object)
+        -   [Smart constructors and Immutable
+            data-types](#smart-constructors-and-immutable-data-types)
+
 Part I: Monads
 ==============
 
@@ -18,8 +85,7 @@ programmers to use.
 
 A simple example of a Monad might be a Box type:
 
-![](./myMediaFolder/media/image2.png){width="7.270138888888889in"
-height="0.36180555555555555in"}
+![](./myMediaFolder/media/image2.png)
 
 A *Box\<T\>,* can hold any type but in this case, it holds and makes
 provision for an integer type, i.e. *Box\<int\>*.
@@ -27,8 +93,7 @@ provision for an integer type, i.e. *Box\<int\>*.
 Look at the implementation of the *Box\<T\>*, notice it's just a C\#
 Class that's been created:
 
-![](./myMediaFolder/media/image4.png){width="7.270138888888889in"
-height="4.56875in"}
+![](./myMediaFolder/media/image4.png)
 
 So far this looks like a normal C\# class for the Box type. You can
 create a *Box\<T\>* by specifying the type of contents it can hold, and
@@ -37,8 +102,7 @@ Additionally, you can set the contents of the *Box\<T\>* through its
 *Item* property. Thus, is it possible to extract and set the contents of
 the *Box\<T\>*:
 
-![](./myMediaFolder/media/image6.png){width="7.270138888888889in"
-height="0.26319444444444445in"}
+![](./myMediaFolder/media/image6.png)
 
 Monads are types that allow you to transform the contents of the Monad,
 in this case the contents of the *Box\<T\>* which is currently set to
@@ -66,8 +130,7 @@ transformation function and executes that function, and the results
 thereof i.e. the *transformation* become part of the result of the
 *Select* function call. Lets see how it does this:
 
-![](./myMediaFolder/media/image8.png){width="7.270138888888889in"
-height="4.040972222222222in"}
+![](./myMediaFolder/media/image8.png)
 
 https://github.com/stumathews/UnderstandingLanguageExt/blob/master/Tutorial01\_monad/Box.cs
 
@@ -100,8 +163,7 @@ user-defined transformation function - like *Bind,* will work.
 
 *Box\<T\>*'s *Select* function is called by the programmer like this:
 
-![](./myMediaFolder/media/image10.png){width="7.270138888888889in"
-height="0.17083333333333334in"}
+![](./myMediaFolder/media/image10.png)
 
 The *x =\> + 1* syntax is a definition of a lambda function that takes
 in one argument and the result of the expression after the *=\>* is the
@@ -113,8 +175,7 @@ Incidentally, this notation of explicitly calling the *Select* function,
 as defined on the *Box\<T\>* type is called the *Linq Fluent Syntax*. An
 alternative is to use the *Linq Query Expression Syntax*:
 
-![](./myMediaFolder/media/image12.png){width="7.270138888888889in"
-height="0.5534722222222223in"}
+![](./myMediaFolder/media/image12.png)
 
 This form, will fetch or *select* a value from the box by using the
 *Box\<T\>*\'s *Select* function (this is done implicitly) and passing
@@ -131,8 +192,7 @@ forms.
 
 The resulting program illustrates the concepts discussed thus far:
 
-![](./myMediaFolder/media/image14.png){width="6.61299321959755in"
-height="4.537312992125984in"}
+![](./myMediaFolder/media/image14.png)
 
 <https://github.com/stumathews/UnderstandingLanguageExt/blob/master/Tutorial01_monad/Program.cs>
 
@@ -187,8 +247,7 @@ previously with *Select*, these are just two extension methods on the
 Box\<T\> type. Also shown is the previously talked about, *Select*
 method which shows how it too features the same VETL convention.
 
-![](./myMediaFolder/media/image15.png){width="7.270138888888889in"
-height="8.073611111111111in"}
+![](./myMediaFolder/media/image15.png)
 
 https://github.com/stumathews/UnderstandingLanguageExt/blob/master/Tutorial02\_transformations\_1/Box.cs
 
@@ -217,8 +276,7 @@ transformation, but package up the result in different ways.
 
 Let have a look at this in an example
 
-![](./myMediaFolder/media/image17.png){width="6.798507217847769in"
-height="9.95780949256343in"}
+![](./myMediaFolder/media/image17.png)
 
 https://github.com/stumathews/UnderstandingLanguageExt/blob/master/Tutorial02\_transformations\_1/Program.cs
 
@@ -239,8 +297,7 @@ requirements for the transformation functions.
 Here the contents of the Boxes are fed into the transformation functions
 as lambda expressions:
 
-![](./myMediaFolder/media/image18.png){width="7.270138888888889in"
-height="0.49375in"}
+![](./myMediaFolder/media/image18.png)
 
 Ultimately the return type of the enclosing Map and Bind functions, i.e.
 the vehicles for the user-defined function need to return a Monad or a
@@ -280,8 +337,7 @@ But here is something sneaky but very useful to know: The user-provided
 transformation function by definition can change the return type of the
 content it is transforming:
 
-![](./myMediaFolder/media/image20.png){width="7.270138888888889in"
-height="0.36180555555555555in"}
+![](./myMediaFolder/media/image20.png)
 
 Look, we\'ve been able to change the type of the Box from a *int\[\]* to
 a *string*!
@@ -318,8 +374,7 @@ Short-circuiting works when chaining or cascading multiple *Bind*() or
 *Map*() transformations together as part of a pipeline. Lets look at an
 example, which we'll go through shortly:
 
-![](./myMediaFolder/media/image23.png){width="7.270138888888889in"
-height="5.020138888888889in"}
+![](./myMediaFolder/media/image23.png)
 
 https://github.com/stumathews/UnderstandingLanguageExt/blob/master/Tutorial03\_pipelines/Program.cs
 
@@ -380,8 +435,7 @@ Now let's look at a complete example showing all the operations on a
 *Box\<T\>* using *Map*() and *Bind*() and introducing a new
 *SelectMany*() extension method on *Box\<T\>:*
 
-![](./myMediaFolder/media/image25.png){width="7.270138888888889in"
-height="9.974305555555556in"}
+![](./myMediaFolder/media/image25.png)
 
 <https://github.com/stumathews/UnderstandingLanguageExt/blob/master/Tutorial04_methods_1/Program.cs>
 
@@ -407,8 +461,7 @@ through its use in the *Linq Query Expression Syntax*.
 This is new, we will discuss this now. Lets look at how SelectMany() is
 defined, as we've already seen how Select/Map and Bind look.
 
-![](./myMediaFolder/media/image27.png){width="7.270138888888889in"
-height="3.386111111111111in"}
+![](./myMediaFolder/media/image27.png)
 
 https://github.com/stumathews/UnderstandingLanguageExt/blob/master/Tutorial04\_methods\_1/Box.cs
 
@@ -427,8 +480,7 @@ you look at how the Linq Query Expression Syntax is used and how
 powerful it is: it allows this function's internals (as read above) to
 be exposed and manipulated dynamically in LINQ. Here is an example:
 
-![](./myMediaFolder/media/image29.png){width="7.270138888888889in"
-height="6.981944444444444in"}
+![](./myMediaFolder/media/image29.png)
 
 https://github.com/stumathews/UnderstandingLanguageExt/blob/master/Tutorial04\_methods\_1/Program.cs
 
@@ -445,7 +497,7 @@ see the invocation of the user-provided transform function,
 *from, start* as its input(as one would expect for a transformation
 function compatible with the bind function). This is effectively the
 user-provided transform function used for passing into Bind. This
-results in the transformed result, *startTransformed. *
+results in the transformed result, *startTransformed.*
 
 So far, this has shown how the Linq Query Syntax can open up both the
 *Select*() and *Bind*() functions and expose it as a Linq Query
@@ -456,8 +508,7 @@ function has access to the start variable as well as the
 perform a transformation expression using the two, as per the project
 function definition:
 
-![](./myMediaFolder/media/image31.png){width="7.270138888888889in"
-height="0.9in"}
+![](./myMediaFolder/media/image31.png)
 
 Note too, that the result of the *project* transformation function is
 put into a *Box\<T\>* and so just like *Bind* and *Map*, need to return
@@ -473,8 +524,7 @@ access to previous expression results, as they remain in scope!
 This becomes more useful when you see it in an example with multiple
 from statements, simulating chaining of the transformations:
 
-![](./myMediaFolder/media/image33.png){width="7.270138888888889in"
-height="1.2166666666666666in"}
+![](./myMediaFolder/media/image33.png)
 
 https://github.com/stumathews/UnderstandingLanguageExt/blob/master/Tutorial07\_transformations\_2/Program.cs
 
@@ -485,8 +535,7 @@ transformation and chaining the results.
 
 Next, we'll bring what we've learnt thus far into a cohesive example:
 
-![](./myMediaFolder/media/image35.png){width="7.270138888888889in"
-height="9.448611111111111in"}
+![](./myMediaFolder/media/image35.png)
 
 https://github.com/stumathews/UnderstandingLanguageExt/blob/master/Tutorial05\_methods\_2/Program.cs
 
@@ -507,8 +556,7 @@ look syntactically different. Remember, the LINQ expression syntax allow
 access to previous transformation results, while the fluent notation,
 only provides you access to the last transformation:
 
-![](./myMediaFolder/media/image37.png){width="7.270138888888889in"
-height="7.151388888888889in"}
+![](./myMediaFolder/media/image37.png)
 
 https://github.com/stumathews/UnderstandingLanguageExt/blob/master/Tutorial06\_Linq/Program.cs
 
@@ -558,8 +606,7 @@ bind(), map() functions and how choices you make impact the subsequent
 invocations of those functions when pipe-lining or chaining these
 functions together
 
-![](./myMediaFolder/media/image39.png){width="7.270138888888889in"
-height="3.5104166666666665in"}
+![](./myMediaFolder/media/image39.png)
 
 https://github.com/stumathews/UnderstandingLanguageExt/blob/master/Tutorial07\_transformations\_2/Program.cs
 
@@ -589,13 +636,11 @@ through the pipelines. This simulates what procedural code does by
 calling function upon function to establish a set of logic for a
 program. We can do this using declarative style also:
 
-![](./myMediaFolder/media/image41.png){width="7.270138888888889in"
-height="5.3493055555555555in"}
+![](./myMediaFolder/media/image41.png)
 
 https://github.com/stumathews/UnderstandingLanguageExt/blob/master/Tutorial08\_declarative\_style/Program.cs
 
-![](./myMediaFolder/media/image43.png){width="6.852083333333334in"
-height="10.690277777777778in"}
+![](./myMediaFolder/media/image43.png)
 
 https://github.com/stumathews/UnderstandingLanguageExt/blob/master/Tutorial08\_declarative\_style/Program.cs
 
@@ -619,8 +664,7 @@ differently)
 But wait, I can make a pipeline too without chaining Bind() or Map()
 statements too? Why can\'t I just do this:
 
-![](./myMediaFolder/media/image45.png){width="7.270138888888889in"
-height="0.3840277777777778in"}
+![](./myMediaFolder/media/image45.png)
 
 https://github.com/stumathews/UnderstandingLanguageExt/blob/master/Tutorial09\_automatic\_validation/Program.cs
 
@@ -685,11 +729,9 @@ We now turn to a specific example of short-circuiting behaviour of
 monads with special emphasis in seeing it in action when using LINQ
 query expression syntax:
 
-![](./myMediaFolder/media/image48.png){width="7.270138888888889in"
-height="3.2118055555555554in"}
+![](./myMediaFolder/media/image48.png)
 
-![](./myMediaFolder/media/image49.png){width="7.270138888888889in"
-height="3.254166666666667in"}
+![](./myMediaFolder/media/image49.png)
 
 https://github.com/stumathews/UnderstandingLanguageExt/blob/master/Tutorial11\_short\_circuiting/Program.cs
 
@@ -716,8 +758,7 @@ function, even though it does not expect a Monad!
 So, we\'ll compose a new function that will take the monad, and adapt it
 to the interface of the original function.
 
-![](./myMediaFolder/media/image51.png){width="7.067361111111111in"
-height="10.690277777777778in"}
+![](./myMediaFolder/media/image51.png)
 
 https://github.com/stumathews/UnderstandingLanguageExt/blob/master/Tutorial12\_function\_compositionial12/Program.cs
 
@@ -745,8 +786,7 @@ Side note: Pure functions are immediately parallelizable and can be used
 for Memoization (storing the result and input of the function requires
 that the function never needs to run again)
 
-![](./myMediaFolder/media/image53.png){width="7.270138888888889in"
-height="10.432638888888889in"}
+![](./myMediaFolder/media/image53.png)
 
 <https://github.com/stumathews/UnderstandingLanguageExt/blob/master/Tutorial13_pure_functions/Program.cs>
 
@@ -774,8 +814,7 @@ The Either\<L,R\> Monad
 This tutorial shows you what a what an Either\<\> type is and how to use
 it generally
 
-![](./myMediaFolder/media/image55.png){width="7.270138888888889in"
-height="7.040277777777778in"}
+![](./myMediaFolder/media/image55.png)
 
 ### Operations on Either\<L,R\>
 
@@ -784,30 +823,26 @@ height="7.040277777777778in"}
 This tutorial shows you what a what an Either\<\>\'s BiBind()
 functionality
 
-![](./myMediaFolder/media/image57.png){width="7.270138888888889in"
-height="6.5375in"}
+![](./myMediaFolder/media/image57.png)
 
 #### Using BiExists
 
 This tutorial shows you what a what an Either\<\>\'s BiExists()
 
-![](./myMediaFolder/media/image59.png){width="7.270138888888889in"
-height="2.9125in"}
+![](./myMediaFolder/media/image59.png)
 
 #### Using Fold() to change an initial state over time based on the contents of the Either
 
 This tutorial shows you what fold() does
 
-![](./myMediaFolder/media/image61.png){width="7.270138888888889in"
-height="2.982638888888889in"}
+![](./myMediaFolder/media/image61.png)
 
 #### Using Iter
 
 Iter: run an arbitary function on the Either\<\> if its value is right
 type or chose BiIter() to specify a function to run on both types
 
-![](./myMediaFolder/media/image63.png){width="7.270138888888889in"
-height="4.166666666666667in"}
+![](./myMediaFolder/media/image63.png)
 
 #### Using BiMap (19)
 
@@ -815,8 +850,7 @@ Using BiMap() to make provision for a transform function for both the
 left and right types of the either. The transform is automatically
 lifted.
 
-![](./myMediaFolder/media/image65.png){width="7.270138888888889in"
-height="3.107638888888889in"}
+![](./myMediaFolder/media/image65.png)
 
 #### Using BindLeft (20)
 
@@ -826,16 +860,14 @@ unusual for the default Bind() function).
 
 The transform is NOT automatically lifted(this is a bind() after all).
 
-![](./myMediaFolder/media/image67.png){width="7.270138888888889in"
-height="4.29375in"}
+![](./myMediaFolder/media/image67.png)
 
 #### Using Match (21)
 
 Using Match to extract the contents of an Either\<\> but not put it back
 into and either types (as map() and Bind() would do)
 
-![](./myMediaFolder/media/image69.png){width="7.270138888888889in"
-height="3.373611111111111in"}
+![](./myMediaFolder/media/image69.png)
 
 ### Operating on Lists of Either\<left, Right\>
 
@@ -848,8 +880,7 @@ allows you to specify how make provision to map/transform both types
 When a Bind/Map function is called on a list of monads, it is BindT or
 BiMapT, otherwise operating on a single monad, use Bind() or Map() alone
 
-![](./myMediaFolder/media/image71.png){width="7.270138888888889in"
-height="9.713194444444444in"}
+![](./myMediaFolder/media/image71.png)
 
 #### Using BindT
 
@@ -857,32 +888,28 @@ This tutorial shows you how you can transform a List of Eithers,
 effectively doing a Bind on each either in the list and a Bi variety
 allows you to specify how make provision to map/transform both types
 
-![](./myMediaFolder/media/image73.png){width="7.270138888888889in"
-height="4.836111111111111in"}
+![](./myMediaFolder/media/image73.png)
 
 #### Using IterT
 
 This tutorial shows you how you can call a function on each right value
 for the list of monads in the list, using IterT() (Either is a monad)
 
-![](./myMediaFolder/media/image75.png){width="7.270138888888889in"
-height="2.740972222222222in"}
+![](./myMediaFolder/media/image75.png)
 
 #### Using Apply
 
 Using Apply both on a simple Either\<\> and a List of Eithers to
 demonstrates its simplicity
 
-![](./myMediaFolder/media/image77.png){width="7.270138888888889in"
-height="7.602083333333334in"}
+![](./myMediaFolder/media/image77.png)
 
 #### Using Partition
 
 Using Partition to easily get both the lefts() and the Rights() in one
 call - as a tuple of (lefts,rights)
 
-![](./myMediaFolder/media/image79.png){width="7.270138888888889in"
-height="3.329861111111111in"}
+![](./myMediaFolder/media/image79.png)
 
 #### Using Match
 
@@ -896,8 +923,7 @@ Along with Map() and Bind() this extracts the value from the Either and
 provides transformation functions for both Left and Right sides of the
 Either
 
-![](./myMediaFolder/media/image81.png){width="7.270138888888889in"
-height="6.4534722222222225in"}
+![](./myMediaFolder/media/image81.png)
 
 The Option\<T\> Monad
 ---------------------
@@ -910,50 +936,43 @@ functions where unexpected behavior would
 
 render them otherwise impure
 
-![](./myMediaFolder/media/image83.png){width="7.270138888888889in"
-height="3.78125in"}
+![](./myMediaFolder/media/image83.png)
 
 ### Basic use-case of Option\<T\> (29)
 
-![](./myMediaFolder/media/image85.png){width="7.229861111111111in"
-height="10.690277777777778in"}
+![](./myMediaFolder/media/image85.png)
 
 ### Using Option\<T\> in functions (passing in and returning)
 
 Contrived example of passing around Option\<T\> arguments
 
-![](./myMediaFolder/media/image87.png){width="7.192361111111111in"
-height="10.690277777777778in"}
+![](./myMediaFolder/media/image87.png)
 
 ### using IfSome() and IfNone()
 
 Demonstrates the usage of IfNone and IfSome which runs a user defined
 function provided the option is None or Some respectively
 
-![](./myMediaFolder/media/image89.png){width="7.270138888888889in"
-height="7.895138888888889in"}
+![](./myMediaFolder/media/image89.png)
 
 ### Pipelining with Options\<T\> (32)
 
 Rosetta code! Procedural -\> Fluent -\> Query Syntax
 
-![](./myMediaFolder/media/image91.png){width="7.270138888888889in"
-height="7.584027777777778in"}
+![](./myMediaFolder/media/image91.png)
 
 ### Using ToEither\<\>
 
 ToEither extension method to convert a value to a right sided
 Either\<L,R\>
 
-![](./myMediaFolder/media/image93.png){width="7.270138888888889in"
-height="7.0881944444444445in"}
+![](./myMediaFolder/media/image93.png)
 
 ### Using BiMap() (34)
 
 Bimap
 
-![](./myMediaFolder/media/image95.png){width="7.270138888888889in"
-height="7.2625in"}
+![](./myMediaFolder/media/image95.png)
 
 The Try\<T\> Monad
 ------------------
@@ -962,8 +981,7 @@ The Try\<T\> Monad
 
 This tutorial demonstrates the use of the Try\<\> Monad.
 
-![](./myMediaFolder/media/image97.png){width="7.270138888888889in"
-height="8.07013888888889in"}
+![](./myMediaFolder/media/image97.png)
 
 Part III: Everything else
 =========================
@@ -971,7 +989,7 @@ Part III: Everything else
 Bonus
 -----
 
-### ThrowIfFailed() and introducing Either\<IAmFailure, Option\<T\>\> 
+### ThrowIfFailed() and introducing Either\<IAmFailure, Option\<T\>\>
 
 ThrowIfFailed and a way to make functions return a standard return type
 of an Either of Right(T) or a failure(Left).
@@ -985,18 +1003,15 @@ Option\<T\>\>
 
 Program.cs
 
-![](./myMediaFolder/media/image99.png){width="7.270138888888889in"
-height="8.26736111111111in"}
+![](./myMediaFolder/media/image99.png)
 
 CustomExtensions:
 
-![](./myMediaFolder/media/image101.png){width="7.270138888888889in"
-height="8.85in"}
+![](./myMediaFolder/media/image101.png)
 
 IamFailure:
 
-![](./myMediaFolder/media/image103.png){width="7.270138888888889in"
-height="2.5680555555555555in"}
+![](./myMediaFolder/media/image103.png)
 
 ### Using custom extension method FailureToNone()
 
@@ -1004,8 +1019,7 @@ We can convert a \'failed\' standard wrapped function to a None. This is
 helpful if you want to turn a failure into a \'valid\' standard function
 either but with None Right value
 
-![](./myMediaFolder/media/image105.png){width="7.270138888888889in"
-height="7.2347222222222225in"}
+![](./myMediaFolder/media/image105.png)
 
 ### Memoization
 
@@ -1013,8 +1027,7 @@ This tutorial exposes how functional programming, particularly caching
 results from pure functions, aids memoization, as they always return the
 same output for same input.
 
-![](./myMediaFolder/media/image107.png){width="7.270138888888889in"
-height="10.685416666666667in"}
+![](./myMediaFolder/media/image107.png)
 
 Now because we\'ve cached decrypted results for phrases, when we see
 that encrypted phrase we can use the cached decrypted result for that
@@ -1052,26 +1065,19 @@ function SimpleEncrypt():
 This tutorial shows how you can use the Fold() function in languageExt
 to change the state of an object over time
 
-![](./myMediaFolder/media/image109.png){width="7.270138888888889in"
-height="6.893055555555556in"}
+![](./myMediaFolder/media/image109.png)
 
-![](./myMediaFolder/media/image111.png){width="7.270138888888889in"
-height="1.2180555555555554in"}
+![](./myMediaFolder/media/image111.png)
 
-![](./myMediaFolder/media/image113.png){width="7.270138888888889in"
-height="3.6645833333333333in"}
+![](./myMediaFolder/media/image113.png)
 
-![](./myMediaFolder/media/image115.png){width="7.270138888888889in"
-height="3.1381944444444443in"}
+![](./myMediaFolder/media/image115.png)
 
-![](./myMediaFolder/media/image117.png){width="7.270138888888889in"
-height="2.8666666666666667in"}
+![](./myMediaFolder/media/image117.png)
 
-![](./myMediaFolder/media/image119.png){width="7.270138888888889in"
-height="3.102777777777778in"}
+![](./myMediaFolder/media/image119.png)
 
-![](./myMediaFolder/media/image121.png){width="7.270138888888889in"
-height="2.4875in"}
+![](./myMediaFolder/media/image121.png)
 
 ### Smart constructors and Immutable data-types
 
@@ -1084,11 +1090,8 @@ designed not to have its state changed by operations
 The operations that it does have, create a new object with the
 modification and leaves the original object untouched.
 
-![](./myMediaFolder/media/image123.png){width="7.270138888888889in"
-height="5.167361111111111in"}
+![](./myMediaFolder/media/image123.png)
 
-![](./myMediaFolder/media/image125.png){width="7.270138888888889in"
-height="3.2256944444444446in"}
+![](./myMediaFolder/media/image125.png)
 
-![](./myMediaFolder/media/image127.png){width="7.270138888888889in"
-height="8.92986111111111in"}
+![](./myMediaFolder/media/image127.png)
