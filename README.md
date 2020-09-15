@@ -4,10 +4,6 @@ Part I: Monads
 Introduction
 ------------
 
-This is a tutorial that aims to demonstrate how to use LanguageExt in
-C\# programs with an emphasis on the practical side, demonstrating
-through code examples and providing narrative throughout the process.
-
 This is a tutorial that aims to demonstrate the fundamentals behind
 using LanguageExt in a practical fashion though step-by-step tutorials
 which introduce and then build up on concepts.
