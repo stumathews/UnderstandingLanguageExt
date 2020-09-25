@@ -13,6 +13,8 @@ delcarative style coding and walks through the fundamentals behind
 Select() SelectMany() and Bind() and Map() while covering implementation
 via Linq\'s Fluent and Linq Expression syntax.
 
+Note: The priority is not being 100% accurate in terms of pure functional programming theory but more on actually getting things done using LanguageExt.
+
 The general tutorial is structured like this:
 
 -   Monads
