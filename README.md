@@ -5,11 +5,11 @@ Introduction
 ------------
 
 This is a tutorial that aims to demonstrate the fundamentals behind
-using LanguageExt in a practical fashion though step-by-step tutorials
+using LanguageExt in a practical fashion through step-by-step tutorials
 which introduce and then build up on concepts.
 
-Furthermore, the tutorial shows how to use ideas such as pipelineing,
-delcarative style coding and walks through the fundamentals behind
+Furthermore, the tutorial shows how to use ideas such as pipelining,
+declarative style coding and walks through the fundamentals behind
 Select() SelectMany() and Bind() and Map() while covering implementation
 via Linq\'s Fluent and Linq Expression syntax.
 
@@ -46,7 +46,7 @@ The general tutorial is structured like this:
 Bonus: Functional programming concepts
 
 -   Caching - Using pure functions to cache things, ensuring that you
-    need not call expensive calls if they\'ve been done once already.
+    need not call expensive calls if they've been done once already.
 
 -   Changing object state over time
 
@@ -158,7 +158,7 @@ Language.Ext
 -   Tutorial31 - using IfSome() and IfNone()
 
 -   Tutorial32 - Creates an entire application of just functions via
-    pipelineing which returning and receive Option
+    pipelining which returns and receives Option
 
 -   Tutorial33 - Using ToEither\<\>
 
@@ -174,29 +174,29 @@ Custom Specific
 -   Tutorial36 - Using custom extension method FailureToNone()
 
 -   Tutorial37 - Using pure functions to cache things, ensuring that you
-    need not call expensive calls if they\'ve been done once already.
+    need not call expensive calls if they've been done once already.
     (Bonus: FP concepts)
 
--   Tutorial38 - Changing state of an object over time (Fold) including
-    concept of apply events over time to change an object (Bonus: FP
+-   Tutorial38 - Changing the state of an object over time (Fold) including
+    concept of applying events over time to change an object (Bonus: FP
     concepts)
 
 -   Tutorial39 - Immutability - Designing your objects with immutability
-    in mind: Smart constructors and Immutable data-types (Bonus: FP
+    in mind: Smart constructors and Immutable data types (Bonus: FP
     concepts)
 
--   Tutorial40 - Try - Supressing Exceptions
+-   Tutorial40 - Try - Suppressing Exceptions
 
 ### Todo
 
 -   TutorialA - Partial Functions - Allowing multiple arguments to be
-    \'baked\' in and still appear as Math like functions (pure
+    \'baked\' in and still appear as math-like functions (pure
     functions)
 
--   TutorialB - Threading and parallelism benfits
+-   TutorialB - Threading and parallelism benefits
 
 -   TutorialC - Guidelines for writing immutable code, starting with IO
-    on the fringes (bycicle spoke design)
+    on the fringes (bicycle spoke design)
 
 -   TutorialD - Custom useful Monad Extensions
 
@@ -220,7 +220,7 @@ A *Box\<T\>,* can hold any type but in this case, it holds and makes
 provision for an integer type, i.e. *Box\<int\>*.
 
 Look at the implementation of the *Box\<T\>*, notice it's just a C\#
-Class that's been created:
+class that's been created:
 
 ![](./myMediaFolder/media/image4.png)
 
@@ -234,9 +234,9 @@ the *Box\<T\>*:
 ![](./myMediaFolder/media/image6.png)
 
 Monads are types that allow you to transform the contents of the Monad,
-in this case the contents of the *Box\<T\>* which is currently set to
-99. A series of defined functions need to exist on a Monad which will
-define the kinds of transformations that can occur -- they are expected
+in this case, the contents of the *Box\<T\>* which is currently set to
+99. A series of defined functions need to exist on a Monad type which will
+define the kinds of transformations that can occur - they are expected
 to exist. If a type has a *Map, Select* and a *Bind* function, it can
 *generally* be considered a Monad.
 
@@ -257,8 +257,8 @@ the Monad.
 The *Select* function does exactly this, when called on the *Box\<T\>,*
 it passes the contents of the *Box\<T\>* monad into the user-defined
 transformation function and executes that function, and the results
-thereof i.e. the *transformation* become part of the result of the
-*Select* function call. Lets see how it does this:
+thereof i.e. the *transformation*, becomes part of the result of the
+*Select* function call. Let's see how it does this:
 
 ![](./myMediaFolder/media/image8.png)
 
@@ -267,10 +267,10 @@ https://github.com/stumathews/UnderstandingLanguageExt/blob/master/Tutorial01\_m
 *TA* is the type of the content of the Box i.e. *Box\<TA\>,* *TB* is the
 type that *TA* will be transformed into, *box* is the *Box\<T\>* type
 where conceptually *T* is replaced with *TA*. The last parameter *map*
-is the user-provided function aka *the transformation function*.
+is the user-provided function aka the *transformation function*.
 
 In this example, the transformation function is called *map*, which will
-be provided by the programmer defined as *Func\<TA, TB\>* which is any
+be provided by the programmer-defined as *Func\<TA, TB\>* which is any
 function accepting a type of *TA* (which also happens to be the type
 which Box holds), and which returns a *TB* type as its transformation
 result.
@@ -279,7 +279,7 @@ You'll notice how the *Box\<T\>*'s *Select* function wraps the supplied
 transformation function, *map()* by first checking if the *Box\<T\>* is
 empty, and if so returns an empty *Box\<TB\>,* otherwise executes the
 map function, producing a transformation of the content. The
-transformation is represented by the return type of *TB*, as the
+transformation is represented by the return type of *TB*, as the 
 original type of the content of the box is *TA*.
 
 An important distinction is that the transformation result is placed
@@ -308,7 +308,7 @@ alternative is to use the *Linq Query Expression Syntax*:
 
 ![](./myMediaFolder/media/image12.png)
 
-This form, will fetch or *select* a value from the box by using the
+This form will fetch or *select* a value from the box by using the
 *Box\<T\>*\'s *Select* function (this is done implicitly) and passing
 the expression immediately after the *select* statement i.e. *select
 number1 +1* as the mapping function for the *Select* function on the
@@ -332,7 +332,7 @@ Many Monads in Language-Ext are utilized by taking advantage of C\#'s
 in this way. This is also largely due to being able to define an
 extension method for any type this way.
 
-When working with Language-Ext in general, the already defined monad
+When working with Language-Ext in general, the already-defined monad
 types such as *Option\<T\>*, *Either\<L,R\>* and *Try\<T\>* already have
 suitable *Select*, *Map* and *Bind* functions defined and as such its
 not needed to define them, and only need to pass in the transformation
@@ -342,17 +342,17 @@ function, that is unless you want to create our own Monad like our
 Why do we need to perform transformations? Traditional programming
 revolves around having functions. Almost every programming language
 allows you to define functions which take input and process it and then
-produce and output. This is what transformation is. So instead of
+produce and output. This is what a transformation is. So instead of
 defining explicit hard-coded functions in your source code, you can now
-pass around functions -- transformation functions. Monads are datatypes
-that allow you to work on their contents but providing the
+pass around functions - transformation functions. Monads are datatypes
+that allow you to work on their contents by providing the
 transformation function, where the input of the transformation function
 will be the contents of the Monad. Monads to a little bit more, they can
-run checks to validate if that function should run or not, and how it
-will behave. In this was Monads provide monadic functions like Select,
+run checks to validate if that transformation function should run or not, and how it
+will behave. In this way Monads provide monadic functions like Select,
 Map and Bind to house the incoming transformation function that the user
-will provide, and acts as an execution vehicle for running that function
-and passing to it, its own contents.
+will provide, and also acts as an execution vehicle for running that function
+and passing to it, its internal contents.
 
 Next, we'll put the Select function aside, and discuss its relatives
 *Map* and *Bind*.
@@ -361,8 +361,8 @@ Understanding Map and Bind
 --------------------------
 
 Now we're going to look into the other monadic functions, map and bind.
-Like select, the both allow the programmer to provide a customer
-transformation function. The difference between the two is how that
+Like select, both allow the programmer to provide a customer
+transformation function. The difference between the two, is how that
 transformation is returned to the programmer.
 
 As suggested previously, like Select, both Map and Bind serve as an
@@ -374,7 +374,7 @@ apply to the how the *Select*, *map* and *bind* functions work and
 dictate how they ultimately call the user-defined transformation
 function.
 
-Let's have a look at *Map* and *Bind* for the *Box\<T\>* Monad. As show
+Let's have a look at *Map* and *Bind* for the *Box\<T\>* Monad. As shown
 previously with *Select*, these are just two extension methods on the
 Box\<T\> type. Also shown is the previously talked about, *Select*
 method which shows how it too features the same VETL convention.
@@ -391,7 +391,7 @@ user-provided transformation function on that content and *Lifts* the
 result of the transformation into a new Box object. In this way, it
 follows the above pattern of *VETL*.
 
-*Map* and *Bind* do much the same, however they differ only in how they
+*Map* and *Bind* do much the same, however, they differ only in how they
 return the transformed result i.e. the Lift/leave phase. In all cases
 the transformation function is run, however the requirements of the
 transformation's functions arguments and return type have changed:
@@ -406,7 +406,7 @@ without needing to place it into a new *Box\<TB\>*.
 Fundamentally, what this means is that both Map and Bind do the same
 transformation, but package up the result in different ways.
 
-Let have a look at this in an example
+Let's have a look at this in an example:
 
 ![](./myMediaFolder/media/image17.png)
 
@@ -432,22 +432,22 @@ as lambda expressions:
 ![](./myMediaFolder/media/image18.png)
 
 Ultimately the return type of the enclosing Map and Bind functions, i.e.
-the vehicles for the user-defined function need to return a Monad or a
+the execution vehicles for the user-defined functions, need to return a Monad or a
 *Box\<int\[\]\>* in this case. So, depending on if we're calling *Map*
 or *Bind*, internally these two functions need to know if the
 transformation function will lift the transformation result into the
 Monad type or not, hence why *Map* and *Bind* function *lift* or *leave*
 the result of transformed content respectively.
 
-How *Map* or *Bind* does this is by expecting a certain return-type of
+How *Map* or *Bind* does this is by expecting a certain return type of
 the user-provided transformation function and either automatically
 *lifting* the result into a *Box\<T\>* where the transformation function
 does not do that, as is the case with the *Map* function, or *leaving*
 the user-provided transformation function to do so, as is the case with
 the *Bind* function. This is why they require different forms of the
 user-provided transformation function, but ultimately the transformation
-is the same for both map and bind. In many cases you can use them
-interchangeably with the exception that the supplied lambda function or
+is the same for both map and bind. In many cases, you can use them
+interchangeably (in as much as they are likely to perform the same transformation work) with the exception that the supplied lambda function or
 transformation function meets the requirements of either returning a
 Monad or not.
 
@@ -455,15 +455,15 @@ The take away is that *Map*() and *Bind*() do the same thing but
 *Bind*() requires you to put your transformation result back in the Box,
 while *Map* doesn\'t.
 
-Both methods \'manage\' your user defined transform function by running
-it only if it deems it should (if validation passes) and then depending
+Both methods \'manage\' your user-defined transform function by running
+it only if it deems it should (i.e if validation passes) and then depending
 on the specific function, it will either lift the result of the
-transformation(*Map*) or require that your transformation function\'s
-signature explicitly says it will do it itself (B*ind*)
+transformation (*Map*) or require that your transformation function\'s
+signature explicitly says it will do it itself (*Bind*)
 
-This means, with a you don't have to return a Box (like you do when you
-with *Bind*), when transforming with the *Map*() function\...it
-automatically does this for you
+This means, with map() a you don't have to return a Box (like you do when you
+with *Bind*), as when transforming with the *Map*() function...it is designed to
+automatically do this for you
 
 But here is something sneaky but very useful to know: The user-provided
 transformation function by definition can change the return type of the
@@ -471,24 +471,24 @@ content it is transforming:
 
 ![](./myMediaFolder/media/image20.png)
 
-Look, we\'ve been able to change the type of the Box from a *int\[\]* to
+Look, we've been able to change the type of the Box from an *int\[\]* to
 a *string*!
 
 This is by virtue of the fact that it's what your transformation
 function returned, and it thus transformed the return type also, and put
-it back into a box(because that's what map does). It's still in a
+it back into a box (because that's what map does). It's still in a
 *Box\<T\>* but is a box of a *string* now instead of a box of
 numbers\....
 
 *Map*() and *Bind*() can do this, and this is what makes these function
-really useful for chaining transformations together. His behaviour
-allows use to instead of designing hard coded functions like other
+useful for chaining transformations together. His behaviour
+allows you to instead of designing hard-coded functions like other
 programming languages like C or Pascal does, we can instead pass our
 functions into our Monads when designing logic that works with them,
 instead of passing out Monads into function, which is the old way of
 thinking.
 
-We'll explore this next but before working further on out Monad Box, why
+We'll explore this next but before working further on our Monad Box, why
 do we need Monads? Why do we have to have Map() and Bind()..
 
 Here is why:
@@ -500,7 +500,7 @@ Pipelining transformation workloads (3)
 ---------------------------------------
 
 We will continue to define and explain our Monad type, *Box\<T\>* and
-showing how transformations are use in real time as well as previewing
+showing how transformations are used in real-time as well as previewing
 an implicit behaviour of Monads: short-circuiting.
 
 Short-circuiting works when chaining or cascading multiple *Bind*() or
@@ -518,7 +518,7 @@ for the next *Bind* extension method to work on. These cascade into a
 series of transformations, but this has hidden and useful feature:
 short-circuiting.
 
-Put differently, this code transform the contents of the box by passing
+Put differently, this code transforms the contents of the box by passing
 it down a series of *Bind*() operations,
 
 so there are multiple associated VETL-\>VETL-\>VETL steps that
@@ -534,21 +534,21 @@ previously looked at.
 The validity of a box in this case, is if it is empty or not (remember
 that at the Bind functions\' code that explicitly checks this),
 
-If it is empty(invalid) it will not run the user provided transformation
+If it is empty(invalid) it will not run the user-provided transformation
 function, otherwise it will.
 
 This is an example of *\'short-circuiting\'* out of the pipeline of
 stacked transformations early on. So, if the first *Bind*
 short-circuits, i.e. the box is empty (the validation phase fails), the
-next *Bind* or *Map* will do the same and so they will not run the
+next *Bind* or *Map* will do the same, so they will not run the
 user-provided transformation function, as the validation phase failed.
 
 When the validation phase fails, it returns a 'bad' result which is what
 other bind function will detect during their validation phase, in this
 case whenever an empty Box is encountered, skipping the transformation
-execute phase and returning the 'bad' or empty box to the next bind in
+execute phase and return the 'bad' or empty box to the next bind in
 the pipeline -- which too will return early. In this way, the pipeline
-has short-circuited and none of the other remining transformation
+has short-circuited and none of the other remaining transformation
 functions are run.
 
 Many Language.Ext monads such as Option\<T\>, Either\<L,R\> and Try\<T\>
@@ -558,9 +558,9 @@ Again, you will notice, that during each transformation, it is possible
 to change the content's type in the monad being passed into the next
 bind, as previously discussed.
 
-Next we'll discuss the SelectMany() function which like Map/Select and
-Bind is used to transform the contents of monads, and like the those, it
-has a new requirement on the user-provided transformation function.
+Next, we'll discuss the SelectMany() function which like Map/Select and
+Bind which is used to transform the contents of monads, and like those, it
+has a new requirement for the user-provided transformation function.
 
 Monadic functions: Complete example (4)
 ---------------------------------------
@@ -575,7 +575,7 @@ Now let's look at a complete example showing all the operations on a
 
 This example starts by showing the passing of Monads into functions.
 Each function *DoubleBox* n..4 will demonstrate a different variant to
-help you get familiar with their usages and occurances.
+help you get familiar with their usages and occurrences.
 
 *DoubleBox1* calls *DoubleNumbers* which accepts a Box\<int\[\]\> Monad
 and transforms it using *Bind*, thus *DoubleNumbers* needs to return a
@@ -587,12 +587,12 @@ and transforms it using *Bind*, thus *DoubleNumbers* needs to return a
 will lift it into a Monad automatically.
 
 These are familiar based on what we've learnt so far and it puts this
-into practise, in a practical fashion.
+into practice, in a practical fashion.
 
 *DoubleBox3* however uses Box\<T\>'s *SelectMany* function implicitly
 through its use in the *Linq Query Expression Syntax*.
 
-This is new, we will discuss this now. Lets look at how SelectMany() is
+This is new, we will discuss this now. Let's look at how SelectMany() is
 defined, as we've already seen how Select/Map and Bind look.
 
 ![](./myMediaFolder/media/image27.png)
@@ -606,10 +606,10 @@ there is an additional step: Once the transformation function is run,
 bind in this case, a 2^nd^ new function can be provided by the user,
 namely project.
 
-Project will take the newly transformed and lifted Monad, along with the
+The project will take the newly transformed and lifted Monad, along with the
 original content and allow that to be transformed into a 3^rd^ Type, TC.
 
-Its not clear yet why this additional bootstrapping is required until
+It's not clear yet why this additional bootstrapping is required until
 you look at how the Linq Query Expression Syntax is used and how
 powerful it is: it allows this function's internals (as read above) to
 be exposed and manipulated dynamically in LINQ. Here is an example:
@@ -635,10 +635,10 @@ results in the transformed result, *startTransformed.*
 
 So far, this has shown how the Linq Query Syntax can open up both the
 *Select*() and *Bind*() functions and expose it as a Linq Query
-Expression. The next part is is the select statement which is
+Expression. The next part is the select statement which is
 effectively the *project* function called implicitly. The *project*
 function has access to the start variable as well as the
-*startTransformed* variable (its in scope) and as such it can use it to
+*startTransformed* variable (its in scope) and as such it can be used to
 perform a transformation expression using the two, as per the project
 function definition:
 
